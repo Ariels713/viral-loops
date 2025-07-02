@@ -70,7 +70,7 @@ export default function Leaderboard() {
 		<div className={styles.container}>
 			<div className={styles.header}>
 				<h2 className={styles.title}>Leaderboard</h2>
-				<p className={styles.subtitle}>Top referrers this month</p>
+				<p className={styles.subtitle}>Top successful referrers this month</p>
 			</div>
 			
 			<div className={styles.leaderboard}>
@@ -84,7 +84,7 @@ export default function Leaderboard() {
 						</div>
 						<div className={styles.name}>{entry.name}</div>
 						<div className={styles.referrals}>
-							{entry.referrals} referrals
+							{entry.successfulReferrals || 0} successful referrals
 						</div>
 					</div>
 				))}

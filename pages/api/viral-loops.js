@@ -74,8 +74,14 @@ export default async function handler(req, res) {
 				if (response.ok) {
 					data = await response.json()
 					
+					// Log the raw data from Viral Loops for debugging
+					console.log('Raw Viral Loops data:', JSON.stringify(data, null, 2))
+					
 					// The Viral Loops API returns data directly as an array, not wrapped in an object
 					participants = Array.isArray(data) ? data : (data.data || data.participants || data.results || [])
+					
+					// Log the processed participants array
+					console.log('Processed participants:', JSON.stringify(participants.slice(0, 3), null, 2))
 				} else {
 					const errorText = await response.text()
 					throw new Error(`Participant search failed: ${response.status} - ${errorText}`)
@@ -106,11 +112,19 @@ export default async function handler(req, res) {
 			}
 			
 			// Transform the data to match our component structure
-			// Sort participants by referral count in descending order
+			// Sort participants by successful referrals first, then by total referrals
 			const sortedParticipants = participants.sort((a, b) => {
-				const aReferrals = a.referralCountTotal || a.referralsCount || a.referrals_count || a.referrals || a.totalReferrals || 0
-				const bReferrals = b.referralCountTotal || b.referralsCount || b.referrals_count || b.referrals || b.totalReferrals || 0
-				return bReferrals - aReferrals
+				const aSuccessful = a.successfulReferrals || a.conversionCountTotal || 0
+				const bSuccessful = b.successfulReferrals || b.conversionCountTotal || 0
+				
+				// If successful referrals are equal, sort by total referrals
+				if (aSuccessful === bSuccessful) {
+					const aReferrals = a.referralCountTotal || a.referralsCount || a.referrals_count || a.referrals || a.totalReferrals || 0
+					const bReferrals = b.referralCountTotal || b.referralsCount || b.referrals_count || b.referrals || b.totalReferrals || 0
+					return bReferrals - aReferrals
+				}
+				
+				return bSuccessful - aSuccessful
 			})
 
 			const leaderboard = sortedParticipants.slice(0, 10).map((participant, index) => {
@@ -137,16 +151,28 @@ export default async function handler(req, res) {
 					participant.referral_count ||
 					0
 
+				// Get successful referrals - try multiple field names
+				const successfulReferrals = participant.successfulReferrals || 
+					participant.conversionCountTotal || 
+					participant.conversions || 
+					participant.successful_referrals ||
+					0
+
+				console.log(`Participant ${name}: Total referrals: ${referrals}, Successful referrals: ${successfulReferrals}`)
+
 				return {
 					id: participant.id || participant._id || `participant_${index + 1}`,
 					name,
 					referrals,
+					successfulReferrals,
 					position: index + 1
 				}
 			})
 
 			// Filter out participants with 0 referrals to show only active referrers
 			const activeLeaderboard = leaderboard.filter(participant => participant.referrals > 0)
+
+			console.log('Final leaderboard data:', JSON.stringify(activeLeaderboard.slice(0, 3), null, 2))
 
 			res.status(200).json({ 
 				leaderboard: activeLeaderboard.length > 0 ? activeLeaderboard : leaderboard.slice(0, 8), 
@@ -240,14 +266,14 @@ export default async function handler(req, res) {
 		// For development, return mock data if API fails
 		if (method === 'GET') {
 			const mockLeaderboard = [
-				{ id: 1, name: 'Alex R.', referrals: 47, position: 1 },
-				{ id: 2, name: 'Jordan M.', referrals: 33, position: 2 },
-				{ id: 3, name: 'Casey L.', referrals: 28, position: 3 },
-				{ id: 4, name: 'Morgan K.', referrals: 19, position: 4 },
-				{ id: 5, name: 'Taylor S.', referrals: 15, position: 5 },
-				{ id: 6, name: 'Jamie P.', referrals: 12, position: 6 },
-				{ id: 7, name: 'Avery D.', referrals: 8, position: 7 },
-				{ id: 8, name: 'Quinn B.', referrals: 6, position: 8 }
+				{ id: 1, name: 'Alex R.', referrals: 47, successfulReferrals: 12, position: 1 },
+				{ id: 2, name: 'Jordan M.', referrals: 33, successfulReferrals: 8, position: 2 },
+				{ id: 3, name: 'Casey L.', referrals: 28, successfulReferrals: 7, position: 3 },
+				{ id: 4, name: 'Morgan K.', referrals: 19, successfulReferrals: 5, position: 4 },
+				{ id: 5, name: 'Taylor S.', referrals: 15, successfulReferrals: 3, position: 5 },
+				{ id: 6, name: 'Jamie P.', referrals: 12, successfulReferrals: 2, position: 6 },
+				{ id: 7, name: 'Avery D.', referrals: 8, successfulReferrals: 1, position: 7 },
+				{ id: 8, name: 'Quinn B.', referrals: 6, successfulReferrals: 1, position: 8 }
 			]
 			
 			res.status(200).json({ 
