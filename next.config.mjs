@@ -17,7 +17,7 @@ const nextConfig = {
         ],
       },
       {
-        source: '/images/*.gif',
+        source: '/images/:path*.gif',
         headers: [
           {
             key: 'Content-Type',
