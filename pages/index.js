@@ -306,6 +306,7 @@ export default function Home() {
                 The period to submit referral submissions will begin on July 2, 2025, at 3:00pm (Eastern Time) and will end on August 16, 2025, at 11:59pm (Eastern Time) ("Contest Period"). Sponsor's computer is the official timekeeping device. Depending on Sponsor's determination of eligibility, prizes may be awarded after the conclusion of the Contest Period at Sponsor's sole discretion.
               </p>
               <h4 className={styles.disclaimerSubtitle}>4. How to Enter</h4>
+              <div className={styles.disclaimerText}>
               <p className={styles.disclaimerText}>
                 There is no purchase necessary to participate. The usage of the Sponsor's services and products will not increase the chances of winning.
               </p>
@@ -327,6 +328,7 @@ export default function Home() {
               <p className={styles.disclaimerText}>
                 <strong>Other Offers:</strong> This Contest may be combined with any other promotions or offers organized by Sponsor, subject to their terms and conditions. Potential Referrals submitted through the Contest's referral links will be evaluated for their eligibility for those separate promotions by a Sponsor sales team member. Eligibility will be determined by those promotions' respective terms and conditions and will not affect eligibility for this Contest. Potential Referrals will be eligible for the awards provided by those promotions in addition to any prizes awarded from this Contest.
               </p>
+              </div>
               <h4 className={styles.disclaimerSubtitle}>5. Prize</h4>
               <p className={styles.disclaimerText}>
                 The prizes, and their availability, are as followed:
@@ -342,6 +344,7 @@ export default function Home() {
                 Each entrant/entity is limited to the available number of prizes as described in Section 5 (Prize) and Section 7 (Winner Selection Process). Prizes are non-transferable and no substitution will be made except in Sponsor's sole discretion. Sponsor will not replace any lost or stolen prizes. Sponsor reserves the right to substitute a prize for one of equal or greater value if the designated prize should become unavailable for any reason. The value associated with each prize is taxable as income and each winner is solely responsible for any taxes and associated costs, including, but not limited to all applicable federal, state and local taxes that become due with respect to the value of each prize. The Sponsor must report the value of each prize to the Internal Revenue Service in the year a prize is received by the winner and will be reported to the winner and the Internal Revenue Service in the form of a Form 1099. Each winner is also responsible for any fees associated with their prize receipt and/or use, and any other costs or expenses not expressly listed in these Rules. Prizes must be redeemed within the period of notification of winning as set forth below.
               </p>
               <h4 className={styles.disclaimerSubtitle}>7. Winner Selection Process</h4>
+              <div className={styles.disclaimerText}>
               <p className={styles.disclaimerText}>
                 After the end of the Contest Period, Sponsor will assess the total number of Qualified Referrals made by each entrant during the Contest Period. The determination of whether a Potential Referral qualifies as an Qualified Referral shall be made at the end of the 90-day period following the opening of its Rho Checking Account and/or Rho Treasury Account and the initial deposit of its required Deposit Balance. Any Potential Referral that did not maintain the Deposit Balance throughout this 90-day period shall be ineligible for any Contest prizes, and the entrant that submitted this Potential Referral shall not receive credit towards its progress for the Grand Prize or the Second Prize.
               </p>
@@ -357,18 +360,22 @@ export default function Home() {
               <p className={styles.disclaimerText}>
                 All submitted Potential Referrals that are deemed as Qualified Referrals shall be credited with $1,000 to their Rho Checking Account.
               </p>
+              </div>
               <h4 className={styles.disclaimerSubtitle}>8. Winner Notification and Verification</h4>
+              <div className={styles.disclaimerText}>
               <p className={styles.disclaimerText}>
                 Sponsor will notify all entrants eligible for a prize via a Linkedin message or email within seven (7) business days of the determination of an entrant's eligibility for a prize (the "Notification Date"). Eligible entrants must respond within fourteen (14) business days of the Notification Date and will be required to complete and return an Affidavit of Eligibility, Release of Liability, Publicity Release (where lawful), and IRS Form W-9. Since referrals may be made until the end of the Contest Period, such Notification Date may be set up to ninety (90) days after the conclusion of the Contest Period to allow for verification of Qualified Referrals.
               </p>
               <p className={styles.disclaimerText}>
                 If an eligible entrant cannot be contacted, fails to sign and return the required documents within the required time period, does not comply with these Rules, or prize is returned as undeliverable, then that entrant forfeits the prize. If an entrant that is eligible for the Grand Prize or the Second Prize is disqualified for any reason, then their prize may be awarded to the entrant with the next most Qualified Referrals, if any, at Sponsor's sole discretion. If an eligible entrant's Second Prize is upgraded to a Grand Prize in this manner, then they will no longer be eligible for this initial Second Prize, which may be awarded to the entrant with the next most Qualified Referrals, if any, at Sponsor's sole discretion.
               </p>
+              </div>
               <h4 className={styles.disclaimerSubtitle}>9. Publicity Release</h4>
               <p className={styles.disclaimerText}>
                 By submitting the nomination entry or by accepting a prize, entrants, and on behalf of their entity, grant Sponsor the right and permission to use their names, likenesses, voices, biographical information (such as city and state), and any statements by either the entrants or winners for advertising and promotional purposes, in any media worldwide, without additional compensation, unless prohibited by law.
               </p>
               <h4 className={styles.disclaimerSubtitle}>10. General Conditions</h4>
+              <div className={styles.disclaimerText}>
               <p className={styles.disclaimerText}>
                 Sponsor reserves the right to cancel, suspend, or modify the Contest if fraud, technical failure, or any other factor impairs the integrity or proper functioning of the Contest, as determined by Sponsor in its sole discretion. Sponsor also reserves the right in its sole discretion to terminate, suspend, or modify the Contest at any time for any reason, including but not limited to changes in business priorities, regulatory concerns, or conference participation changes. If the Contest is terminated before the designated end date, Sponsor may, in its sole discretion, award the prize(s) from among all eligible Potential Referrals received up to the time of termination, provided that such Potential Referrals meet all eligibility requirements set forth in these Rules, including the minimum referral requirements for each prize tier.
               </p>
@@ -387,6 +394,7 @@ export default function Home() {
               <p className={styles.disclaimerText}>
                 <strong>WARNING:</strong> ANY ATTEMPT BY AN ENTRANT OR ANY OTHER INDIVIDUAL TO DELIBERATELY DAMAGE ANY WEBSITE ASSOCIATED WITH THIS CONTEST OR UNDERMINE THE LEGITIMATE OPERATION OF THE CONTEST MAY BE A VIOLATION OF CRIMINAL AND CIVIL LAW, AND, SHOULD SUCH AN ATTEMPT BE MADE, SPONSOR RESERVES THE RIGHT TO PROSECUTE AND SEEK DAMAGES (INCLUDING ATTORNEY'S FEES) FROM ANY SUCH PERSON TO THE FULLEST EXTENT PERMITTED BY LAW. SPONSOR'S FAILURE TO ENFORCE ANY TERM OF THESE OFFICIAL RULES SHALL NOT CONSTITUTE A WAIVER OF THESE PROVISIONS.
               </p>
+              </div>
               <h4 className={styles.disclaimerSubtitle}>11. Release and Liability Limit</h4>
               <p className={styles.disclaimerText}>
                 By participating, entrants agree to release, discharge, indemnify and hold harmless Sponsor and Contest Entities and each of its and their respective officers, directors, employees, representatives, and agents (collectively, "Released Parties") from and against any and all liability, claim, costs (including attorneys' fees), losses, damages, fines, or actions of any kind whatsoever for any injuries, damages or losses to any person (including death) or property of any kind resulting in whole or in part, directly or indirectly, in connection with: (i) participation in any aspect of the Contest (including but not limited to travel to/from any Contest-related events, promotion/publicity, or any other Contest activity), (ii) the receipt, ownership, use or misuse of the prize awarded, including any travel associated with any prize, (iii) the Released Parties' violation of rights of publicity or privacy, claims of defamation or portrayal in a false light or based on any claim of infringement of intellectual property; (iv) entrant's registration material on any related website, or (v) any typographical, human, technical or other error in the printing, offering, selection, operation or announcement of any Contest activity and/or prize. THE RELEASED PARTIES ARE NOT RESPONSIBLE IF ANY PRIZE CANNOT BE AWARDED DUE TO CANCELLATIONS, DELAYS, OR INTERRUPTIONS DUE TO ACTS OF GOD, ACTS OF WAR, NATURAL DISASTERS, WEATHER, OR TERRORISM.

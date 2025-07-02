@@ -618,3 +618,9 @@
     /* flex-direction: row-reverse; */
   }
 }
+
+.disclaimerText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
