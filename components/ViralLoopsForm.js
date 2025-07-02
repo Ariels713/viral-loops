@@ -111,7 +111,7 @@ export default function ViralLoopsForm() {
 	return (
 		<div className={styles.container}>
 			<div className={styles.header}>
-				<h2 className={styles.title}>🚀 Join Our Referral Program</h2>
+				<h2 className={styles.title}>Join Our Referral Program</h2>
 				<p className={styles.subtitle}>
 					Refer friends and earn amazing rewards for every successful referral!
 				</p>
