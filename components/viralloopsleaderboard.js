@@ -31,7 +31,9 @@ export default function ViralLoopsLeaderboard() {
 			
 			// Show a notice if using mock data
 			if (data.mock) {
-				console.log('Using mock data:', data.error)
+				console.log('📊 Demo Mode:', data.note)
+			} else if (data.success) {
+				console.log('✅ Live Data:', `${data.totalParticipants || 0} total participants`)
 			}
 			
 		} catch (err) {
