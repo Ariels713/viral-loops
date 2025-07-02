@@ -1,0 +1,183 @@
+.container {
+	background: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	padding: 24px;
+	width: 100%;
+	max-width: 480px;
+	margin: 0 auto;
+}
+
+.header {
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+.title {
+	font-size: 24px;
+	font-weight: 700;
+	color: #1f2937;
+	margin: 0 0 8px 0;
+}
+
+.subtitle {
+	font-size: 14px;
+	color: #6b7280;
+	margin: 0;
+}
+
+.leaderboard {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-bottom: 24px;
+}
+
+.leaderboardItem {
+	display: flex;
+	align-items: center;
+	padding: 16px;
+	background: #f9fafb;
+	border-radius: 8px;
+	transition: all 0.2s ease;
+}
+
+.leaderboardItem:hover {
+	background: #f3f4f6;
+	transform: translateY(-1px);
+}
+
+.position {
+	font-size: 18px;
+	font-weight: 700;
+	min-width: 40px;
+	margin-right: 16px;
+	text-align: center;
+}
+
+.name {
+	font-size: 16px;
+	font-weight: 600;
+	color: #1f2937;
+	flex: 1;
+}
+
+.referrals {
+	font-size: 14px;
+	color: #6b7280;
+	font-weight: 500;
+}
+
+.footer {
+	text-align: center;
+}
+
+.refreshButton {
+	background: #3b82f6;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	padding: 12px 24px;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.refreshButton:hover {
+	background: #2563eb;
+	transform: translateY(-1px);
+}
+
+.refreshButton:active {
+	transform: translateY(0);
+}
+
+.loading, .error {
+	text-align: center;
+	padding: 40px 20px;
+	font-size: 16px;
+}
+
+.loading {
+	color: #6b7280;
+}
+
+.error {
+	color: #dc2626;
+	background: #fef2f2;
+	border-radius: 8px;
+	border: 1px solid #fecaca;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+	.container {
+		background: #1f2937;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+	}
+
+	.title {
+		color: #f9fafb;
+	}
+
+	.subtitle {
+		color: #9ca3af;
+	}
+
+	.leaderboardItem {
+		background: #374151;
+	}
+
+	.leaderboardItem:hover {
+		background: #4b5563;
+	}
+
+	.name {
+		color: #f9fafb;
+	}
+
+	.referrals {
+		color: #9ca3af;
+	}
+
+	.loading {
+		color: #9ca3af;
+	}
+
+	.error {
+		color: #fca5a5;
+		background: #7f1d1d;
+		border-color: #dc2626;
+	}
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+	.container {
+		padding: 16px;
+		margin: 0 16px;
+	}
+
+	.title {
+		font-size: 20px;
+	}
+
+	.leaderboardItem {
+		padding: 12px;
+	}
+
+	.position {
+		min-width: 32px;
+		margin-right: 12px;
+		font-size: 16px;
+	}
+
+	.name {
+		font-size: 14px;
+	}
+
+	.referrals {
+		font-size: 12px;
+	}
+} 
