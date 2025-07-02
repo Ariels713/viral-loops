@@ -179,7 +179,7 @@
 }
 
 .stepTitle {
-  font-size: clamp(24px, 3vw, 32px);
+  font-size: clamp(24px, 3vw, 48px);
   font-weight: 700;
   color: #141716;
   margin: 0 0 16px 0;
@@ -194,6 +194,9 @@
   margin: 0 0 24px 0;
   text-align: left;
   margin-left: 38px;
+  @media (min-width: 768px) {
+    margin-left: 0px;
+  }
 }
 
 .getUrlButton {
@@ -614,8 +617,11 @@
   gap: 10px;
   margin-top: 4px;
   /* on desktop they should be stacked on mobile side to side */
-  @media (max-width: 768px) {
-    /* flex-direction: row-reverse; */
+  @media (min-width: 768px) {
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 0px;
+    gap: 0px;
   }
 }
 
