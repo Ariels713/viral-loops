@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
-import ViralLoopsLeaderboard from '~/components/ViralLoopsLeaderboard.js'
+import Leaderboard from '~/components/Leaderboard'
 import ViralLoopsForm from '~/components/ViralLoopsForm.js'
 import styles from "@/styles/Home.module.css";
 
@@ -211,7 +211,7 @@ export default function Home() {
                 </p>
               </div>
               <div className={styles.leaderboardWidget}>
-                <ViralLoopsLeaderboard />
+                <Leaderboard />
               </div>
             </div>
           </div>

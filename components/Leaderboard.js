@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import styles from './ViralLoopsLeaderboard.module.css'
+import styles from './Leaderboard.module.css'
 
-export default function ViralLoopsLeaderboard() {
+export default function Leaderboard() {
 	const [leaderboard, setLeaderboard] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(null)
