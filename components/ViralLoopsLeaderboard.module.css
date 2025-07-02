@@ -1,6 +1,6 @@
 .container {
 	background: #ffffff;
-	border-radius: 12px;
+	border-radius:4px;
 	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 	padding: 24px;
 	width: 100%;
@@ -38,7 +38,7 @@
 	align-items: center;
 	padding: 16px;
 	background: #f9fafb;
-	border-radius: 8px;
+	border-radius: 4px;
 	transition: all 0.2s ease;
 }
 
@@ -73,8 +73,8 @@
 }
 
 .refreshButton {
-	background: #3b82f6;
-	color: white;
+	background: #07ebc0;
+	color: #151716;
 	border: none;
 	border-radius: 8px;
 	padding: 12px 24px;
@@ -84,10 +84,10 @@
 	transition: all 0.2s ease;
 }
 
-.refreshButton:hover {
+/* .refreshButton:hover {
 	background: #2563eb;
 	transform: translateY(-1px);
-}
+} */
 
 .refreshButton:active {
 	transform: translateY(0);
@@ -113,8 +113,7 @@
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
 	.container {
-		background: #1f2937;
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+		background: #202422;
 	}
 
 	.title {
@@ -126,7 +125,7 @@
 	}
 
 	.leaderboardItem {
-		background: #374151;
+		background: #151716;
 	}
 
 	.leaderboardItem:hover {

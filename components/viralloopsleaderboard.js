@@ -69,7 +69,7 @@ export default function ViralLoopsLeaderboard() {
 	return (
 		<div className={styles.container}>
 			<div className={styles.header}>
-				<h2 className={styles.title}>🏆 Leaderboard</h2>
+				<h2 className={styles.title}>Leaderboard</h2>
 				<p className={styles.subtitle}>Top referrers this month</p>
 			</div>
 			
@@ -90,11 +90,11 @@ export default function ViralLoopsLeaderboard() {
 				))}
 			</div>
 
-			<div className={styles.footer}>
+			{/* <div className={styles.footer}>
 				<button className={styles.refreshButton} onClick={fetchLeaderboard}>
-					🔄 Refresh
+					Refresh
 				</button>
-			</div>
+			</div> */}
 		</div>
 	)
 } 

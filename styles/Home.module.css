@@ -244,7 +244,7 @@
 
 .widgets {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 40px;
   align-items: start;
   max-width: 1200px;
@@ -254,6 +254,47 @@
 .widget {
   display: flex;
   justify-content: center;
+}
+
+/* Leaderboard Section */
+.leaderboardSection {
+  background: #141716;
+  padding: 80px 20px;
+  color: #ffffff;
+}
+
+.leaderboardContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.leaderboardHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.leaderboardTitle {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.leaderboardSubtitle {
+  font-size: 18px;
+  color: #B4BEB6;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+.leaderboardWidget {
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* FAQ Section */
@@ -294,8 +335,8 @@
 }
 
 .faqItem {
-  background: #1f2937;
-  border-radius: 8px;
+  background: #202422;
+  border-radius: 4px;
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -444,6 +485,14 @@
     max-width: 100%;
   }
   
+  .leaderboardSection {
+    padding: 60px 20px;
+  }
+  
+  .leaderboardHeader {
+    margin-bottom: 40px;
+  }
+  
   .widgetsSection {
     padding: 40px 20px;
   }
@@ -482,6 +531,10 @@
   
   .steps {
     gap: 40px;
+  }
+  
+  .leaderboardSection {
+    padding: 40px 16px;
   }
   
   .widgetsSection {

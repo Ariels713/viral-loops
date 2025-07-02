@@ -120,22 +120,22 @@ export default function Home() {
                   From July to August 15th, earn more rewards for every qualified business you refer to Rho. Terms and conditions apply.
                 </p>
               </div>
-{/* add a divider */}
-<div className={styles.divider}></div>
+              {/* add a divider */}
+              <div className={styles.divider}></div>
               <div className={styles.steps}>
                 {/* Step 1 */}
                 <div className={styles.step}>
                   <div className={styles.stepContent}>
-                  <div className={styles.stepNumber}>01.</div>
-                  <div className={styles.stepContent}>
-                    <h3 className={styles.stepTitle}>Get your unique referral link</h3>
-                    <p className={styles.stepDescription}>
-                      Sign up using the form below, entering your name and email address. You will then receive a unique referral URL. Every qualified referral that opens a Rho Account using that link will count toward your leaderboard score.
-                    </p>
-                    <button className={styles.getUrlButton} onClick={() => document.getElementById('signup-form').scrollIntoView({ behavior: 'smooth' })}>
-                      Get URL
-                    </button>
-                  </div>
+                    <div className={styles.stepNumber}>01.</div>
+                    <div className={styles.stepContent}>
+                      <h3 className={styles.stepTitle}>Get your unique referral link</h3>
+                      <p className={styles.stepDescription}>
+                        Sign up using the form below, entering your name and email address. You will then receive a unique referral URL. Every qualified referral that opens a Rho Account using that link will count toward your leaderboard score.
+                      </p>
+                      <button className={styles.getUrlButton} onClick={() => document.getElementById('signup-form').scrollIntoView({ behavior: 'smooth' })}>
+                        Get URL
+                      </button>
+                    </div>
                   </div>
 
                   <div className={styles.stepImage}>
@@ -152,7 +152,7 @@ export default function Home() {
                 {/* Step 2 */}
                 <div className={styles.step}>
                   <div className={styles.stepContent}>
-                  <div className={styles.stepNumber}>02.</div>
+                    <div className={styles.stepNumber}>02.</div>
                     <h3 className={styles.stepTitle}>Earn $1,000 for every qualifying business you refer</h3>
                     <p className={styles.stepDescription}>
                       For every qualifying business that signs up through your link, you earn $1,000, and they earn $1,000 too.
@@ -172,7 +172,7 @@ export default function Home() {
                 {/* Step 3 */}
                 <div className={styles.step}>
                   <div className={styles.stepContent}>
-                  <div className={styles.stepNumber}>03.</div>
+                    <div className={styles.stepNumber}>03.</div>
                     <h3 className={styles.stepTitle}>Compete for the $100,000 Grand Prize</h3>
                     <p className={styles.stepDescription}>
                       The person or business that refers the most qualifying startups wins the $100,000 grand prize. Second place gets $25,000 to put toward an off-site experience for your team.
@@ -196,11 +196,22 @@ export default function Home() {
           <div className={styles.widgetsSection} id="signup-form">
             <div className={styles.widgets}>
               <div className={styles.widget}>
-                <ViralLoopsLeaderboard />
-              </div>
-
-              <div className={styles.widget}>
                 <ViralLoopsForm />
+              </div>
+            </div>
+          </div>
+
+          {/* Leaderboard Section */}
+          <div className={styles.leaderboardSection}>
+            <div className={styles.leaderboardContainer}>
+              <div className={styles.leaderboardHeader}>
+                <h2 className={styles.leaderboardTitle}>Summer of Rho Leaderboard</h2>
+                <p className={styles.leaderboardSubtitle}>
+                  Compete for the $100K Grand Prize.
+                </p>
+              </div>
+              <div className={styles.leaderboardWidget}>
+                <ViralLoopsLeaderboard />
               </div>
             </div>
           </div>
@@ -238,6 +249,30 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          <div className={styles.howItWorksSection}>
+                <div className={styles.howitworksContent}>
+                  <div className={styles.steps}>
+                    <div className={styles.step}>
+                      <div className={styles.stepContent}>
+                        <h3 className={styles.stepTitle}>Have other questions about Summer of Rho?</h3>
+                        <button className={styles.getUrlButton} onClick={() => window.location.href = 'mailto:summerofrho@rho.co?subject=Summer%20of%20Rho%20competition%20question'}>
+                          Contact Us
+                        </button>
+                      </div>
+                      <div className={styles.stepImage}>
+                        <Image
+                          src="/images/sign-up.png"
+                          alt="Get your unique referral link"
+                          width={400}
+                          height={400}
+                          className={styles.stepIllustration}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </main>
 
         <footer className={styles.footer}>
