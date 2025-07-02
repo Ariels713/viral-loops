@@ -126,9 +126,11 @@ export default function Home() {
                 {/* Step 1 */}
                 <div className={styles.step}>
                   <div className={styles.stepContent}>
-                    <div className={styles.stepNumber}>01.</div>
-                    <div className={styles.stepContent}>
+                    <div className={styles.stepNumberContent}>
+                      <div className={styles.stepNumber}>01.</div>
                       <h3 className={styles.stepTitle}>Get your unique referral link</h3>
+                    </div>
+                    <div className={styles.stepContent}>
                       <p className={styles.stepDescription}>
                         Sign up using the form below, entering your name and email address. You will then receive a unique referral URL. Every qualified referral that opens a Rho Account using that link will count toward your leaderboard score.
                       </p>
@@ -152,8 +154,10 @@ export default function Home() {
                 {/* Step 2 */}
                 <div className={styles.step}>
                   <div className={styles.stepContent}>
+                  <div className={styles.stepNumberContent}>
                     <div className={styles.stepNumber}>02.</div>
                     <h3 className={styles.stepTitle}>Earn $1,000 for every qualifying business you refer</h3>
+                    </div>
                     <p className={styles.stepDescription}>
                       For every qualifying business that signs up through your link, you earn $1,000, and they earn $1,000 too.
                     </p>
@@ -172,8 +176,10 @@ export default function Home() {
                 {/* Step 3 */}
                 <div className={styles.step}>
                   <div className={styles.stepContent}>
-                    <div className={styles.stepNumber}>03.</div>
-                    <h3 className={styles.stepTitle}>Compete for the $100,000 Grand Prize</h3>
+                    <div className={styles.stepNumberContent}>
+                      <div className={styles.stepNumber}>03.</div>
+                      <h3 className={styles.stepTitle}>Compete for the $100,000 Grand Prize</h3>
+                    </div>
                     <p className={styles.stepDescription}>
                       The person or business that refers the most qualifying startups wins the $100,000 grand prize. Second place gets $25,000 to put toward an off-site experience for your team.
                     </p>
