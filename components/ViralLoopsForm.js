@@ -70,14 +70,14 @@ export default function ViralLoopsForm() {
 				
 				// Show referral link if available
 				if (data.data?.referralLink) {
-					console.log('🔗 Your referral link:', data.data.referralLink)
+					// Registration successful
 				}
 				
 				// Show notice if using mock data
 				if (data.mock) {
-					console.log('📝 Demo Mode:', data.note)
-				} else {
-					console.log('✅ Successfully registered with Viral Loops!')
+									// Demo mode - using mock data
+			} else {
+				// Successfully registered with Viral Loops
 				}
 				
 				// Reset success message after 3 seconds

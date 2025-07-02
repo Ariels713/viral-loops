@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import styles from './ViralLoopsLeaderboard.module.css'
+import styles from './Leaderboard.module.css'
 
-export default function ViralLoopsLeaderboard() {
+export default function Leaderboard() {
 	const [leaderboard, setLeaderboard] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(null)
@@ -31,9 +31,9 @@ export default function ViralLoopsLeaderboard() {
 			
 			// Show a notice if using mock data
 			if (data.mock) {
-				console.log('📊 Demo Mode:', data.note)
+				// Demo mode - using mock data
 			} else if (data.success) {
-				console.log('✅ Live Data:', `${data.totalParticipants || 0} total participants`)
+				// Live data loaded successfully
 			}
 			
 		} catch (err) {
@@ -69,7 +69,7 @@ export default function ViralLoopsLeaderboard() {
 	return (
 		<div className={styles.container}>
 			<div className={styles.header}>
-				<h2 className={styles.title}>🏆 Leaderboard</h2>
+				<h2 className={styles.title}>Leaderboard</h2>
 				<p className={styles.subtitle}>Top referrers this month</p>
 			</div>
 			
@@ -90,11 +90,11 @@ export default function ViralLoopsLeaderboard() {
 				))}
 			</div>
 
-			<div className={styles.footer}>
+			{/* <div className={styles.footer}>
 				<button className={styles.refreshButton} onClick={fetchLeaderboard}>
-					🔄 Refresh
+					Refresh
 				</button>
-			</div>
+			</div> */}
 		</div>
 	)
 } 

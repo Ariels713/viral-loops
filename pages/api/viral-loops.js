@@ -4,6 +4,7 @@
 export default async function handler(req, res) {
 	const { method } = req
 	const campaignId = process.env.NEXT_PUBLIC_VIRAL_LOOPS_CAMPAIGN_ID
+	// Use the specific API token provided by Viral Loops for the participant search endpoint
 	const apiToken = process.env.VIRAL_LOOPS_API_TOKEN
 
 	// Enable CORS
@@ -18,37 +19,38 @@ export default async function handler(req, res) {
 
 	try {
 		if (method === 'GET') {
-			// Try multiple API approaches to find the one that works for this campaign
+			// Use the new Viral Loops participant search endpoint
 			let response, data, participants = []
 
 			try {
-				// Approach 1: Try participant data endpoint (universal campaigns)
-				console.log('🔄 Trying v3 API participant data...')
-				response = await fetch('https://app.viral-loops.com/api/v3/participant/data', {
-					method: 'GET',
+				// Primary approach: Use the new participant search endpoint
+				response = await fetch('https://app.viral-loops.com/api/v3/campaign/participant/search', {
+					method: 'POST',
 					headers: {
 						'accept': 'application/json',
-						'apiToken': apiToken
-					}
+						'apiToken': apiToken,
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						filters: {
+							conversionStatus: "all",
+							source: "all",
+							searchTerm: ""
+						},
+						pagination: {
+							offset: 0,
+							limit: 10
+						}
+					})
 				})
 
-				if (response.ok) {
-					data = await response.json()
-					participants = data.data || data.participants || []
-					console.log('✅ Participant data success:', participants.length, 'participants')
-				} else {
-					const errorText = await response.text()
-					console.log('Participant data error:', response.status, errorText)
-					throw new Error(`Participant data failed: ${response.status}`)
-				}
-
-			} catch (dataError) {
-				console.log('❌ Participant data failed:', dataError.message)
-				
-				try {
-					// Approach 2: Try participant query endpoint
-					console.log('🔄 Trying v3 API participant query...')
-					response = await fetch('https://app.viral-loops.com/api/v3/participant/query', {
+				// Check for rate limiting
+				if (response.status === 429) {
+					// Rate limit detected, wait before retry
+					await new Promise(resolve => setTimeout(resolve, 2000))
+					
+					// Retry once
+					response = await fetch('https://app.viral-loops.com/api/v3/campaign/participant/search', {
 						method: 'POST',
 						headers: {
 							'accept': 'application/json',
@@ -56,78 +58,101 @@ export default async function handler(req, res) {
 							'Content-Type': 'application/json'
 						},
 						body: JSON.stringify({
-							limit: 20,
-							offset: 0
+							filters: {
+								conversionStatus: "all",
+								source: "all",
+								searchTerm: ""
+							},
+							pagination: {
+								offset: 0,
+								limit: 10
+							}
 						})
+					})
+				}
+
+				if (response.ok) {
+					data = await response.json()
+					
+					// The Viral Loops API returns data directly as an array, not wrapped in an object
+					participants = Array.isArray(data) ? data : (data.data || data.participants || data.results || [])
+				} else {
+					const errorText = await response.text()
+					throw new Error(`Participant search failed: ${response.status} - ${errorText}`)
+				}
+
+			} catch (searchError) {
+				// Fallback: Try the previous working endpoints
+				try {
+					// Fallback 1: Try participant data endpoint
+					response = await fetch('https://app.viral-loops.com/api/v3/participant/data', {
+						method: 'GET',
+						headers: {
+							'accept': 'application/json',
+							'apiToken': apiToken
+						}
 					})
 
 					if (response.ok) {
 						data = await response.json()
 						participants = data.data || data.participants || []
-						console.log('✅ Participant query success:', participants.length, 'participants')
 					} else {
-						const errorText = await response.text()
-						console.log('Participant query error:', response.status, errorText)
-						throw new Error(`Participant query failed: ${response.status}`)
+						throw new Error(`Participant data fallback failed: ${response.status}`)
 					}
 
-				} catch (queryError) {
-					console.log('❌ Participant query failed:', queryError.message)
-					
-					try {
-						// Approach 3: Get campaign stats and use as fallback indicator
-						console.log('🔄 Trying v3 API campaign stats as fallback...')
-						response = await fetch('https://app.viral-loops.com/api/v3/campaign/stats', {
-							method: 'GET',
-							headers: {
-								'accept': 'application/json',
-								'apiToken': apiToken
-							}
-						})
-
-						if (response.ok) {
-							data = await response.json()
-							console.log('✅ Campaign stats success:', data)
-							
-							// Create mock leaderboard based on stats since we can't get individual participants
-							if (data.leadCount > 0) {
-								participants = Array.from({ length: Math.min(data.leadCount, 8) }, (_, i) => ({
-									id: i + 1,
-									firstname: `Participant`,
-									lastname: `${i + 1}`,
-									referralsCount: Math.max(0, data.referralCountTotal - i * 2),
-									position: i + 1
-								}))
-								console.log('📊 Created representative leaderboard from stats')
-							}
-						}
-						
-						if (participants.length === 0) {
-							throw new Error('No participant data available from any endpoint')
-						}
-					} catch (statsError) {
-						console.log('❌ Campaign stats failed:', statsError.message)
-						throw new Error('All API methods exhausted')
-					}
+				} catch (fallbackError) {
+					throw new Error('All API methods exhausted')
 				}
 			}
 			
 			// Transform the data to match our component structure
-			const leaderboard = participants.slice(0, 10).map((participant, index) => ({
-				id: participant.id || index + 1,
-				name: participant.firstname ? 
-					`${participant.firstname} ${(participant.lastname || '').charAt(0)}.` : 
-					participant.email ? 
-						`${participant.email.split('@')[0].charAt(0).toUpperCase()}${participant.email.split('@')[0].slice(1)}` :
-						`User ${index + 1}`,
-				referrals: participant.referralsCount || participant.referrals_count || participant.referrals || 0,
-				position: index + 1
-			}))
+			// Sort participants by referral count in descending order
+			const sortedParticipants = participants.sort((a, b) => {
+				const aReferrals = a.referralCountTotal || a.referralsCount || a.referrals_count || a.referrals || a.totalReferrals || 0
+				const bReferrals = b.referralCountTotal || b.referralsCount || b.referrals_count || b.referrals || b.totalReferrals || 0
+				return bReferrals - aReferrals
+			})
+
+			const leaderboard = sortedParticipants.slice(0, 10).map((participant, index) => {
+				// Try different name combinations
+				let name = 'Anonymous User'
+				
+				if (participant.firstname || participant.first_name) {
+					const firstName = participant.firstname || participant.first_name
+					const lastName = participant.lastname || participant.last_name || ''
+					name = lastName ? `${firstName} ${lastName.charAt(0)}.` : firstName
+				} else if (participant.name) {
+					name = participant.name
+				} else if (participant.email) {
+					const emailUser = participant.email.split('@')[0]
+					name = `${emailUser.charAt(0).toUpperCase()}${emailUser.slice(1)}`
+				}
+
+				// Try different referral count fields - prioritize referralCountTotal from Viral Loops
+				const referrals = participant.referralCountTotal || 
+					participant.referralsCount || 
+					participant.referrals_count || 
+					participant.referrals || 
+					participant.totalReferrals || 
+					participant.referral_count ||
+					0
+
+				return {
+					id: participant.id || participant._id || `participant_${index + 1}`,
+					name,
+					referrals,
+					position: index + 1
+				}
+			})
+
+			// Filter out participants with 0 referrals to show only active referrers
+			const activeLeaderboard = leaderboard.filter(participant => participant.referrals > 0)
 
 			res.status(200).json({ 
-				leaderboard, 
+				leaderboard: activeLeaderboard.length > 0 ? activeLeaderboard : leaderboard.slice(0, 8), 
 				success: true,
 				totalParticipants: participants.length,
+				activeReferrers: activeLeaderboard.length,
 				source: 'live_data'
 			})
 
@@ -146,7 +171,6 @@ export default async function handler(req, res) {
 
 			try {
 				// Use the correct Universal Referral campaign endpoint
-				console.log('🔄 Trying Universal Referral campaign registration...')
 				response = await fetch('https://app.viral-loops.com/api/v3/campaign/participant', {
 					method: 'POST',
 					headers: {
@@ -165,15 +189,12 @@ export default async function handler(req, res) {
 
 				if (response.ok) {
 					data = await response.json()
-					console.log('✅ Universal Referral registration success:', data)
 				} else {
 					const errorText = await response.text()
-					console.log('Universal Referral registration error:', response.status, errorText)
 					throw new Error(`Universal Referral registration failed: ${response.status}`)
 				}
 
 			} catch (registrationError) {
-				console.log('❌ Universal Referral registration failed:', registrationError.message)
 				throw new Error('Registration failed: ' + registrationError.message)
 			}
 			
@@ -195,7 +216,7 @@ export default async function handler(req, res) {
 		}
 
 	} catch (error) {
-		console.error('Viral Loops API Error:', error.message)
+		// Handle API errors gracefully
 		
 		// For development, return mock data if API fails
 		if (method === 'GET') {
