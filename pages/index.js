@@ -195,9 +195,9 @@ export default function Home() {
           {/* Widgets Section */}
           <div className={styles.widgetsSection} id="signup-form">
             <div className={styles.widgets}>
-              {/* <div className={styles.widget}>
+              <div className={styles.widget}>
                 <ViralLoopsForm />
-              </div> */}
+              </div>
             </div>
           </div>
 
