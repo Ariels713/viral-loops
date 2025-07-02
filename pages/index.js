@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
-import ViralLoopsLeaderboard from '~/components/ViralLoopsLeaderboard'
-import ViralLoopsForm from '~/components/ViralLoopsForm'
+import ViralLoopsLeaderboard from '~/components/ViralLoopsLeaderboard.js'
+import ViralLoopsForm from '~/components/ViralLoopsForm.js'
 import styles from "@/styles/Home.module.css";
 
 export default function Home() {
