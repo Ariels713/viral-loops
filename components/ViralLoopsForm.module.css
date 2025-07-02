@@ -1,7 +1,7 @@
 .container {
 	background: #ffffff;
-	border-radius: 12px;
-	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
+
 	padding: 24px;
 	width: 100%;
 	max-width: 480px;
@@ -71,13 +71,12 @@
 }
 
 .submitButton {
-	background: #3b82f6;
-	color: white;
+	background: #00d4aa;
+	color: #151716;
 	border: none;
 	border-radius: 8px;
 	padding: 14px 24px;
 	font-size: 16px;
-	font-weight: 600;
 	cursor: pointer;
 	transition: all 0.2s ease;
 	display: flex;
@@ -87,10 +86,10 @@
 	margin-top: 8px;
 }
 
-.submitButton:hover:not(:disabled) {
+/* .submitButton:hover:not(:disabled) {
 	background: #2563eb;
 	transform: translateY(-1px);
-}
+} */
 
 .submitButton:active:not(:disabled) {
 	transform: translateY(0);
@@ -163,10 +162,9 @@
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
 	.container {
 		background: #1f2937;
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 	}
 
 	.title {
@@ -214,7 +212,7 @@
 	.footerText {
 		color: #6b7280;
 	}
-}
+} */
 
 /* Mobile responsiveness */
 @media (max-width: 640px) {

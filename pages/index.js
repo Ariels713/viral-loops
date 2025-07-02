@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
-import ViralLoopsLeaderboard from '../components/ViralLoopsLeaderboard'
-import ViralLoopsForm from '../components/ViralLoopsForm'
+import ViralLoopsLeaderboard from '../components/ViralLoopsLeaderboard.js'
+import ViralLoopsForm from '../components/ViralLoopsForm.js'
 import styles from "@/styles/Home.module.css";
 
 export default function Home() {
@@ -216,6 +216,30 @@ export default function Home() {
             </div>
           </div>
 
+          <div className={styles.howItWorksSection}>
+            <div className={styles.howitworksContent}>
+              <div className={styles.steps}>
+                <div className={styles.step}>
+                  <div className={styles.stepContent}>
+                    <h3 className={styles.stepTitle}>Have other questions about Summer of Rho?</h3>
+                    <button className={styles.getUrlButton} onClick={() => window.location.href = 'mailto:summerofrho@rho.co?subject=Summer%20of%20Rho%20competition%20question'}>
+                      Contact Us
+                    </button>
+                  </div>
+                  <div className={styles.stepImage}>
+                    <Image
+                      src="/images/sign-up.png"
+                      alt="Get your unique referral link"
+                      width={400}
+                      height={400}
+                      className={styles.stepIllustration}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* FAQ Section */}
           <div className={styles.faqSection}>
             <div className={styles.faqContainer}>
@@ -250,33 +274,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.howItWorksSection}>
-                <div className={styles.howitworksContent}>
-                  <div className={styles.steps}>
-                    <div className={styles.step}>
-                      <div className={styles.stepContent}>
-                        <h3 className={styles.stepTitle}>Have other questions about Summer of Rho?</h3>
-                        <button className={styles.getUrlButton} onClick={() => window.location.href = 'mailto:summerofrho@rho.co?subject=Summer%20of%20Rho%20competition%20question'}>
-                          Contact Us
-                        </button>
-                      </div>
-                      <div className={styles.stepImage}>
-                        <Image
-                          src="/images/sign-up.png"
-                          alt="Get your unique referral link"
-                          width={400}
-                          height={400}
-                          className={styles.stepIllustration}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
         </main>
 
         <footer className={styles.footer}>
-          <p>Powered by Viral Loops • Built with Next.js</p>
+          {/* <p>Powered by Viral Loops • Built with Next.js</p> */}
         </footer>
       </div>
     </>

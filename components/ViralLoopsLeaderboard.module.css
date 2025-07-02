@@ -1,5 +1,5 @@
 .container {
-	background: #ffffff;
+	background: #202422;
 	border-radius:4px;
 	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 	padding: 24px;
@@ -16,13 +16,13 @@
 .title {
 	font-size: 24px;
 	font-weight: 700;
-	color: #1f2937;
+	color: #fff;
 	margin: 0 0 8px 0;
 }
 
 .subtitle {
 	font-size: 14px;
-	color: #6b7280;
+	color: #B4BEB6;
 	margin: 0;
 }
 
@@ -37,7 +37,7 @@
 	display: flex;
 	align-items: center;
 	padding: 16px;
-	background: #f9fafb;
+	background: #151716;
 	border-radius: 4px;
 	transition: all 0.2s ease;
 }
@@ -58,7 +58,7 @@
 .name {
 	font-size: 16px;
 	font-weight: 600;
-	color: #1f2937;
+	color: #fff;
 	flex: 1;
 }
 
@@ -79,7 +79,6 @@
 	border-radius: 8px;
 	padding: 12px 24px;
 	font-size: 14px;
-	font-weight: 600;
 	cursor: pointer;
 	transition: all 0.2s ease;
 }
@@ -111,7 +110,7 @@
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
 	.container {
 		background: #202422;
 	}
@@ -149,7 +148,7 @@
 		background: #7f1d1d;
 		border-color: #dc2626;
 	}
-}
+} */
 
 /* Mobile responsiveness */
 @media (max-width: 640px) {
