@@ -71,11 +71,11 @@ export default function Home() {
         {/* OpenGraph Meta Tags */}
         <meta property="og:title" content="Summer of Rho 2025 - Referral Program" />
         <meta property="og:description" content="The easiest $100K your startup could make. Join the Summer of Rho 2025 referral program!" />
-        <meta property="og:image" content="https://yourdomain.com/images/meta_gif.gif" />
+        <meta property="og:image" content="/images/meta_gif.gif" />
         <meta property="og:image:type" content="image/gif" />
         <meta property="og:image:width" content="480" />
         <meta property="og:image:height" content="270" />
-        <meta property="og:url" content="https://yourdomain.com" />
+        <meta property="og:url" content="/" />
         <meta property="og:site_name" content="Summer of Rho 2025" />
         <meta property="og:type" content="website" />
         
@@ -83,7 +83,7 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Summer of Rho 2025 - Referral Program" />
         <meta name="twitter:description" content="The easiest $100K your startup could make. Join the Summer of Rho 2025 referral program!" />
-        <meta name="twitter:image" content="https://yourdomain.com/images/meta_gif.gif" />
+        <meta name="twitter:image" content="/images/meta_gif.gif" />
         
         {/* Additional meta tags for better compatibility */}
         <meta property="og:image:alt" content="Summer of Rho 2025 referral program animation" />
