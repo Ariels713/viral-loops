@@ -197,6 +197,24 @@ export default async function handler(req, res) {
 			} catch (registrationError) {
 				throw new Error('Registration failed: ' + registrationError.message)
 			}
+
+			// After successful registration, fetch participant data to get complete details
+			let participantData = null
+			try {
+				const participantResponse = await fetch('https://app.viral-loops.com/api/v3/campaign/participant/data', {
+					method: 'GET',
+					headers: {
+						'accept': 'application/json',
+						'apiToken': apiToken
+					}
+				})
+
+				if (participantResponse.ok) {
+					participantData = await participantResponse.json()
+				}
+			} catch (participantError) {
+				console.log('Could not fetch participant data:', participantError.message)
+			}
 			
 			res.status(200).json({ 
 				success: true, 
@@ -205,7 +223,8 @@ export default async function handler(req, res) {
 					email: email,
 					referralCode: data.referralCode,
 					isNew: data.isNew,
-					referralLink: `https://viral-loops.com/ref/${data.referralCode}` // Construct referral link
+					referralLink: `https://viral-loops.com/ref/${data.referralCode}`,
+					participantData: participantData // Include full participant data if available
 				},
 				source: 'live_api'
 			})
@@ -237,6 +256,7 @@ export default async function handler(req, res) {
 				note: 'Demo data - Configure API integration for live data'
 			})
 		} else {
+			const mockReferralCode = 'DEMO' + Math.random().toString(36).substr(2, 6).toUpperCase()
 			res.status(200).json({ 
 				success: true, 
 				mock: true,
@@ -244,7 +264,18 @@ export default async function handler(req, res) {
 				data: {
 					id: 'demo_' + Date.now(),
 					email: req.body.email,
-					referralLink: 'https://your-campaign.viral-loops.com/ref/demo-link'
+					referralCode: mockReferralCode,
+					referralLink: `https://your-campaign.viral-loops.com/ref/${mockReferralCode}`,
+					participantData: {
+						email: req.body.email,
+						firstname: req.body.firstName,
+						lastname: req.body.lastName || '',
+						referralCode: mockReferralCode,
+						rank: 0,
+						referralCountTotal: 0,
+						referredLeads: 0,
+						xReferrals: 0
+					}
 				}
 			})
 		}

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './ViralLoopsForm.module.css'
 
 export default function ViralLoopsForm() {
@@ -8,8 +8,24 @@ export default function ViralLoopsForm() {
 		lastName: ''
 	})
 	const [loading, setLoading] = useState(false)
-	const [success, setSuccess] = useState(false)
 	const [error, setError] = useState(null)
+	const [registrationData, setRegistrationData] = useState(null)
+	const [showForm, setShowForm] = useState(true)
+
+	// Check localStorage on component mount
+	useEffect(() => {
+		const savedRegistration = localStorage.getItem('viralLoopsRegistration')
+		if (savedRegistration) {
+			try {
+				const parsedData = JSON.parse(savedRegistration)
+				setRegistrationData(parsedData)
+				setShowForm(false)
+			} catch (err) {
+				console.error('Error parsing saved registration data:', err)
+				localStorage.removeItem('viralLoopsRegistration')
+			}
+		}
+	}, [])
 
 	const handleInputChange = (e) => {
 		const { name, value } = e.target
@@ -65,23 +81,22 @@ export default function ViralLoopsForm() {
 			const data = await response.json()
 			
 			if (data.success) {
-				setSuccess(true)
+				// Store registration data in localStorage
+				const registrationInfo = {
+					email: formData.email,
+					firstName: formData.firstName,
+					lastName: formData.lastName,
+					referralCode: data.data.referralCode,
+					referralLink: data.data.referralLink,
+					participantData: data.data.participantData,
+					registrationDate: new Date().toISOString(),
+					isMock: data.mock || false
+				}
+				
+				localStorage.setItem('viralLoopsRegistration', JSON.stringify(registrationInfo))
+				setRegistrationData(registrationInfo)
+				setShowForm(false)
 				setFormData({ email: '', firstName: '', lastName: '' })
-				
-				// Show referral link if available
-				if (data.data?.referralLink) {
-					// Registration successful
-				}
-				
-				// Show notice if using mock data
-				if (data.mock) {
-									// Demo mode - using mock data
-			} else {
-				// Successfully registered with Viral Loops
-				}
-				
-				// Reset success message after 3 seconds
-				setTimeout(() => setSuccess(false), 3000)
 			} else {
 				setError(data.error || 'Failed to join referral program')
 			}
@@ -94,20 +109,122 @@ export default function ViralLoopsForm() {
 		}
 	}
 
-	if (success) {
+	const handleNewRegistration = () => {
+		localStorage.removeItem('viralLoopsRegistration')
+		setRegistrationData(null)
+		setShowForm(true)
+		setFormData({ email: '', firstName: '', lastName: '' })
+		setError(null)
+	}
+
+	const copyToClipboard = async (text) => {
+		try {
+			await navigator.clipboard.writeText(text)
+			// You could add a toast notification here
+		} catch (err) {
+			console.error('Failed to copy to clipboard:', err)
+		}
+	}
+
+	// Show referral code if user has already registered
+	if (!showForm && registrationData) {
 		return (
 			<div className={styles.container}>
-				<div className={styles.success}>
-					<div className={styles.successIcon}>🎉</div>
-					<h3 className={styles.successTitle}>Welcome to our referral program!</h3>
-					<p className={styles.successMessage}>
-						You've been successfully registered. Start sharing your referral link to earn rewards!
+				{/* <div className={styles.header}>
+					<h2 className={styles.title}>Your Referral Code</h2>
+					<p className={styles.subtitle}>
+						Share your referral code to earn rewards!
+					</p>
+				</div> */}
+
+				<div className={styles.referralDisplay}>
+					<div className={styles.welcomeMessage}>
+						<h2 className={styles.welcomeTitle}>
+							Welcome, {registrationData.firstName}!
+						</h2>
+						<p className={styles.welcomeText}>
+							You're all set up in our referral program.
+						</p>
+					</div>
+
+					<div className={styles.referralCodeContainer}>
+						<label className={styles.label}>Your Referral Code</label>
+						<div className={styles.codeDisplay}>
+							<code className={styles.referralCode}>
+								{registrationData.referralCode}
+							</code>
+							<button 
+								onClick={() => copyToClipboard(registrationData.referralCode)}
+								className={styles.copyButton}
+								title="Copy to clipboard"
+							>
+								Copy
+							</button>
+						</div>
+					</div>
+
+					<div className={styles.referralLinkContainer}>
+						<label className={styles.label}>Your Referral Link</label>
+						<div className={styles.linkDisplay}>
+							<input 
+								type="text" 
+								value={registrationData.referralLink} 
+								readOnly 
+								className={styles.linkInput}
+							/>
+							<button 
+								onClick={() => copyToClipboard(registrationData.referralLink)}
+								className={styles.copyButton}
+								title="Copy to clipboard"
+							>
+								Copy
+							</button>
+						</div>
+					</div>
+
+					{registrationData.participantData && (
+						<div className={styles.statsContainer}>
+							<h4 className={styles.statsTitle}>Your Progress</h4>
+							<div className={styles.statsGrid}>
+								<div className={styles.statItem}>
+									<span className={styles.statLabel}>Total Referrals</span>
+									<span className={styles.statValue}>
+										{registrationData.participantData.referralCountTotal || 0}
+									</span>
+								</div>
+								<div className={styles.statItem}>
+									<span className={styles.statLabel}>Current Rank</span>
+									<span className={styles.statValue}>
+										#{registrationData.participantData.rank || 'Unranked'}
+									</span>
+								</div>
+							</div>
+						</div>
+					)}
+
+					{registrationData.isMock && (
+						<div className={styles.demoNotice}>
+							<p>🚧 Demo Mode - This is sample data for testing purposes</p>
+						</div>
+					)}
+				</div>
+
+				<div className={styles.footer}>
+					<button 
+						onClick={handleNewRegistration}
+						className={styles.resetButton}
+					>
+						Register Different Email
+					</button>
+					<p className={styles.footerText}>
+						Registered on {new Date(registrationData.registrationDate).toLocaleDateString()}
 					</p>
 				</div>
 			</div>
 		)
 	}
 
+	// Show registration form
 	return (
 		<div className={styles.container}>
 			<div className={styles.header}>
@@ -195,4 +312,4 @@ export default function ViralLoopsForm() {
 			</div>
 		</div>
 	)
-} 
+}
