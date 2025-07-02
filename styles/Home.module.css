@@ -55,7 +55,7 @@
 .headline {
   font-size: clamp(28px, 5vw, 48px);
   font-weight: 800;
-  color: #141716;
+  color: #fff;
   margin: 0 0 24px 0;
   line-height: 1.2;
 }
@@ -72,7 +72,7 @@
 /* Video Player */
 .videoContainer {
   margin: 50px auto;
-  max-width: 700px;
+  max-width: 900px;
 }
 
 .videoWrapper {
@@ -80,15 +80,10 @@
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
+  border-radius: 4px;
 }
 
-.videoWrapper:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-}
+
 
 .videoIframe {
   position: absolute;
@@ -200,12 +195,11 @@
 
 .getUrlButton {
   background: #00D4AA;
-  color: #ffffff;
+  color: #141716;
   border: none;
   padding: 12px 24px;
   border-radius: 6px;
   font-size: 14px;
-  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   cursor: pointer;
