@@ -223,7 +223,7 @@ export default async function handler(req, res) {
 					email: email,
 					referralCode: data.referralCode,
 					isNew: data.isNew,
-					referralLink: `https://viral-loops.com/ref/${data.referralCode}`,
+					referralLink: `https://www.rho.co/?utm_source=q3-referral-program&utm_source=summer-of-rho&referralCode=${data.referralCode}`,
 					participantData: participantData // Include full participant data if available
 				},
 				source: 'live_api'
@@ -265,7 +265,7 @@ export default async function handler(req, res) {
 					id: 'demo_' + Date.now(),
 					email: req.body.email,
 					referralCode: mockReferralCode,
-					referralLink: `https://your-campaign.viral-loops.com/ref/${mockReferralCode}`,
+					referralLink: `https://www.rho.co/?utm_source=q3-referral-program&utm_source=summer-of-rho&referralCode=${mockReferralCode}`,
 					participantData: {
 						email: req.body.email,
 						firstname: req.body.firstName,
