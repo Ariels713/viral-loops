@@ -162,6 +162,183 @@
 	line-height: 1.4;
 }
 
+/* Referral Code Display Styles */
+.referralDisplay {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.welcomeMessage {
+	text-align: center;
+	padding: 20px;
+	/* background: #f0fdf4; */
+	border-radius: 8px;
+	/* border: 1px solid #bbf7d0; */
+}
+
+.welcomeTitle {
+	font-size: 32px;
+	font-weight: 700;
+	color: inherit;
+	margin: 8px 0 4px 0;
+}
+
+.welcomeText {
+	font-size: 14px;
+	color: #202422;
+	margin: 0;
+}
+
+.referralCodeContainer,
+.referralLinkContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.codeDisplay,
+.linkDisplay {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.referralCode {
+	/* background: #1f2937; */
+	/* color: #10b981; */
+	padding: 12px 20px;
+	border-radius: 8px;
+	font-size: 18px;
+	/* font-weight: 700; */
+	/* font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace; */
+	letter-spacing: 2px;
+	flex: 1;
+	/* text-align: center; */
+	border: 2px solid #151716;
+	color: #374151;
+    background: #f9fafb;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    flex: 1;
+    padding: 12px 16px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.linkInput {
+	flex: 1;
+	padding: 12px 16px;
+	border: 2px solid #e5e7eb;
+	border-radius: 8px;
+	font-size: 14px;
+	background: #f9fafb;
+	color: #374151;
+	font-family: monospace;
+}
+
+.copyButton {
+	background: #f3f4f6;
+	border: 2px solid #e5e7eb;
+	border-radius: 8px;
+	padding: 12px 16px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	font-size: 16px;
+	min-width: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: black;
+}
+
+.copyButton:hover {
+	background: #e5e7eb;
+	border-color: #d1d5db;
+	transform: translateY(-1px);
+}
+
+.copyButton:active {
+	transform: translateY(0);
+}
+
+.statsContainer {
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-radius: 8px;
+	padding: 20px;
+}
+
+.statsTitle {
+	font-size: 16px;
+	font-weight: 600;
+	color: #1e293b;
+	margin: 0 0 16px 0;
+}
+
+.statsGrid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 16px;
+}
+
+.statItem {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+}
+
+.statLabel {
+	font-size: 12px;
+	color: #64748b;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-weight: 500;
+}
+
+.statValue {
+	font-size: 24px;
+	font-weight: 700;
+	color: #0f172a;
+}
+
+.demoNotice {
+	background: #fef3c7;
+	border: 1px solid #f59e0b;
+	border-radius: 8px;
+	padding: 12px 16px;
+	text-align: center;
+}
+
+.demoNotice p {
+	margin: 0;
+	color: #92400e;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.resetButton {
+	background: #6b7280;
+	color: #ffffff;
+	border: none;
+	border-radius: 8px;
+	padding: 10px 16px;
+	font-size: 14px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	margin-bottom: 12px;
+}
+
+.resetButton:hover {
+	background: #4b5563;
+	transform: translateY(-1px);
+}
+
+.resetButton:active {
+	transform: translateY(0);
+}
+
 /* Dark mode support */
 /* @media (prefers-color-scheme: dark) {
 	.container {
@@ -242,5 +419,41 @@
 
 	.successTitle {
 		font-size: 18px;
+	}
+
+	/* Mobile styles for referral display */
+	.welcomeTitle {
+		font-size: 18px;
+	}
+
+	.referralCode {
+		font-size: 16px;
+		padding: 10px 16px;
+		letter-spacing: 1px;
+	}
+
+	.statsGrid {
+		grid-template-columns: 1fr;
+		gap: 12px;
+	}
+
+	.statValue {
+		font-size: 20px;
+	}
+
+	.codeDisplay,
+	.linkDisplay {
+
+		gap: 8px;
+	}
+
+	.copyButton {
+		width: 100%;
+		padding: 10px;
+		max-width: 150px;
+	}
+
+	.linkInput {
+		font-size: 12px;
 	}
 }
