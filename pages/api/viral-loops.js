@@ -24,7 +24,6 @@ export default async function handler(req, res) {
 
 			try {
 				// Primary approach: Use the new participant search endpoint
-				console.log('🔄 Trying v3 API participant search endpoint...')
 				response = await fetch('https://app.viral-loops.com/api/v3/campaign/participant/search', {
 					method: 'POST',
 					headers: {
@@ -47,7 +46,7 @@ export default async function handler(req, res) {
 
 				// Check for rate limiting
 				if (response.status === 429) {
-					console.log('⚠️ Rate limit detected (429), waiting before retry...')
+					// Rate limit detected, wait before retry
 					await new Promise(resolve => setTimeout(resolve, 2000))
 					
 					// Retry once
@@ -77,30 +76,15 @@ export default async function handler(req, res) {
 					
 					// The Viral Loops API returns data directly as an array, not wrapped in an object
 					participants = Array.isArray(data) ? data : (data.data || data.participants || data.results || [])
-					console.log('✅ Participant search success:', participants.length, 'participants')
-					console.log('📊 API Response type:', Array.isArray(data) ? 'Array' : 'Object')
-					
-					// Log first participant structure for debugging
-					if (participants.length > 0) {
-						console.log('👤 First participant structure:', Object.keys(participants[0]))
-						console.log('👤 First participant sample:', JSON.stringify(participants[0]).slice(0, 200))
-					} else {
-						console.log('⚠️ No participants found in response')
-					}
 				} else {
 					const errorText = await response.text()
-					console.log('❌ Participant search error:', response.status, errorText)
-					console.log('📋 Response headers:', Object.fromEntries(response.headers.entries()))
 					throw new Error(`Participant search failed: ${response.status} - ${errorText}`)
 				}
 
 			} catch (searchError) {
-				console.log('❌ Participant search failed:', searchError.message)
-				
 				// Fallback: Try the previous working endpoints
 				try {
 					// Fallback 1: Try participant data endpoint
-					console.log('🔄 Falling back to v3 API participant data...')
 					response = await fetch('https://app.viral-loops.com/api/v3/participant/data', {
 						method: 'GET',
 						headers: {
@@ -112,13 +96,11 @@ export default async function handler(req, res) {
 					if (response.ok) {
 						data = await response.json()
 						participants = data.data || data.participants || []
-						console.log('✅ Participant data fallback success:', participants.length, 'participants')
 					} else {
 						throw new Error(`Participant data fallback failed: ${response.status}`)
 					}
 
 				} catch (fallbackError) {
-					console.log('❌ All API methods failed:', fallbackError.message)
 					throw new Error('All API methods exhausted')
 				}
 			}
@@ -189,7 +171,6 @@ export default async function handler(req, res) {
 
 			try {
 				// Use the correct Universal Referral campaign endpoint
-				console.log('🔄 Trying Universal Referral campaign registration...')
 				response = await fetch('https://app.viral-loops.com/api/v3/campaign/participant', {
 					method: 'POST',
 					headers: {
@@ -208,15 +189,12 @@ export default async function handler(req, res) {
 
 				if (response.ok) {
 					data = await response.json()
-					console.log('✅ Universal Referral registration success:', data)
 				} else {
 					const errorText = await response.text()
-					console.log('Universal Referral registration error:', response.status, errorText)
 					throw new Error(`Universal Referral registration failed: ${response.status}`)
 				}
 
 			} catch (registrationError) {
-				console.log('❌ Universal Referral registration failed:', registrationError.message)
 				throw new Error('Registration failed: ' + registrationError.message)
 			}
 			
@@ -238,7 +216,7 @@ export default async function handler(req, res) {
 		}
 
 	} catch (error) {
-		console.error('Viral Loops API Error:', error.message)
+		// Handle API errors gracefully
 		
 		// For development, return mock data if API fails
 		if (method === 'GET') {

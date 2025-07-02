@@ -31,9 +31,9 @@ export default function Leaderboard() {
 			
 			// Show a notice if using mock data
 			if (data.mock) {
-				console.log('📊 Demo Mode:', data.note)
+				// Demo mode - using mock data
 			} else if (data.success) {
-				console.log('✅ Live Data:', `${data.totalParticipants || 0} total participants`)
+				// Live data loaded successfully
 			}
 			
 		} catch (err) {
