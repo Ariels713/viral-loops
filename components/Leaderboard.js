@@ -74,7 +74,14 @@ export default function Leaderboard() {
 				<div className={styles.header}>
 					<h2 className={styles.title}>🏆 Leaderboard</h2>
 				</div>
-				<div className={styles.empty}>no scores yet, check back later 😎</div>
+				<div className={styles.empty}>
+					<img
+						src='/images/JustaGuy.png'
+						alt='No scores yet'
+						className={styles.emptyImage}
+					/>
+					<span style={{ textWrap: 'pretty', display: 'inline-block' }}>no scores yet, check back later 😎</span>
+				</div>
 			</div>
 		)
 	}

@@ -136,6 +136,18 @@
 	font-size: clamp(16px, 3vw, 20px);
 	color: #999ea8;
 	font-family: var(--font-primary);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.emptyImage {
+	object-fit: contain;
+	margin-left: 16px;
+
+	/* NEW – scales down with the container */
+	width: clamp(80px, 30vw, 200px);	/* min 80 px, max 200 px */
+	height: auto;						/* keep the aspect ratio */
 }
 
 /* Dark mode support */
