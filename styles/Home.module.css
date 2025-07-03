@@ -176,6 +176,11 @@
 
 .stepContent {
   max-width: 500px;
+  @media (max-width: 768px) {
+    > .getUrlButton {
+      width: 100%;
+    }
+  }
 }
 
 .stepTitle {
