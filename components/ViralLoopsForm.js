@@ -147,7 +147,7 @@ export default function ViralLoopsForm() {
 						</p>
 					</div>
 
-					<div className={styles.referralCodeContainer}>
+					{/* <div className={styles.referralCodeContainer}>
 						<label className={styles.label}>Your Referral Code</label>
 						<div className={styles.codeDisplay}>
 							<code className={styles.referralCode}>
@@ -161,7 +161,7 @@ export default function ViralLoopsForm() {
 								Copy
 							</button>
 						</div>
-					</div>
+					</div> */}
 
 					<div className={styles.referralLinkContainer}>
 						<label className={styles.label}>Your Referral Link</label>
