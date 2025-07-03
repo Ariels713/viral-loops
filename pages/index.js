@@ -113,7 +113,7 @@ export default function Home() {
               </h2>
 
               <p className={styles.subheadline}>
-                Starting in July, earn $1000 for every qualified business you refer to Rho - and compete for the $100,000 Grand Prize. Terms and conditions apply.*
+              Refer a qualified startup to Rho. You get $1,000. They get $1,000. Refer the most before August 15th, you win $100,000. Terms and conditions apply.
               </p>
 
               {/* Video Player */}
