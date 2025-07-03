@@ -158,7 +158,7 @@ export default function Home() {
                         Sign up using the form below, entering your name and email address. You will then receive a unique referral URL. Every qualified referral that opens a Rho Account using that link will count toward your leaderboard score.
                       </p>
                       <button className={styles.getUrlButton} onClick={() => document.getElementById('signup-form').scrollIntoView({ behavior: 'smooth' })}>
-                        Get URL
+                        Get Your Link
                       </button>
                     </div>
                   </div>
