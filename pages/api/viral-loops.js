@@ -1,11 +1,58 @@
 // API handler for Viral Loops integration
 // This will handle both leaderboard fetching and participant registration
 
+// Function to send Slack notification
+async function sendSlackNotification(userData) {
+	const slackWebhookUrl = process.env.SLACK_WEBHOOK_URL
+	
+	if (!slackWebhookUrl) {
+		console.log('Slack webhook URL not configured, skipping notification')
+		return
+	}
+
+	const submissionDate = new Date().toLocaleDateString('en-US', {
+		month: '2-digit',
+		day: '2-digit'
+	})
+
+	const message = {
+		text: "New Summer of Rho Registration! 🎉",
+		blocks: [
+			{
+				type: "section",
+				text: {
+					type: "mrkdwn",
+					text: `*New Summer of Rho Registration! 🎉*\n\n*Name:* ${userData.firstName} ${userData.lastName || ''}\n*Email:* ${userData.email}\n*Submission Date:* ${submissionDate}`
+				}
+			}
+		]
+	}
+
+	try {
+		const response = await fetch(slackWebhookUrl, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(message)
+		})
+
+		if (!response.ok) {
+			throw new Error(`Slack webhook failed: ${response.status}`)
+		}
+
+		console.log('Slack notification sent successfully')
+	} catch (error) {
+		console.error('Failed to send Slack notification:', error)
+	}
+}
+
 export default async function handler(req, res) {
 	const { method } = req
 	const campaignId = process.env.NEXT_PUBLIC_VIRAL_LOOPS_CAMPAIGN_ID
 	// Use the specific API token provided by Viral Loops for the participant search endpoint
 	const apiToken = process.env.VIRAL_LOOPS_API_TOKEN
+	const isTestingMode = process.env.VIRAL_LOOPS_TESTING_MODE === 'true'
 
 	// Enable CORS
 	res.setHeader('Access-Control-Allow-Origin', '*')
@@ -193,7 +240,44 @@ export default async function handler(req, res) {
 				})
 			}
 
+			// Send Slack notification first (regardless of testing mode)
+			try {
+				await sendSlackNotification({ email, firstName, lastName })
+			} catch (slackError) {
+				console.error('Slack notification failed:', slackError)
+				// Don't fail the registration if Slack fails
+			}
+
 			let response, data
+
+			// Skip Viral Loops API call if in testing mode
+			if (isTestingMode) {
+				console.log('Testing mode enabled - skipping Viral Loops API call')
+				const mockReferralCode = 'TEST' + Math.random().toString(36).substr(2, 6).toUpperCase()
+				
+				return res.status(200).json({ 
+					success: true, 
+					testing: true,
+					data: {
+						id: 'test_' + Date.now(),
+						email: email,
+						referralCode: mockReferralCode,
+						isNew: true,
+						referralLink: `https://www.rho.co/?utm_source=q3-referral-program&utm_source=summer-of-rho&referralCode=${mockReferralCode}`,
+						participantData: {
+							email: email,
+							firstname: firstName,
+							lastname: lastName || '',
+							referralCode: mockReferralCode,
+							rank: 0,
+							referralCountTotal: 0,
+							referredLeads: 0,
+							xReferrals: 0
+						}
+					},
+					source: 'testing_mode'
+				})
+			}
 
 			try {
 				// Use the correct Universal Referral campaign endpoint
@@ -282,6 +366,17 @@ export default async function handler(req, res) {
 				note: 'Demo data - Configure API integration for live data'
 			})
 		} else {
+			// Send Slack notification for mock registration too
+			try {
+				await sendSlackNotification({ 
+					email: req.body.email, 
+					firstName: req.body.firstName, 
+					lastName: req.body.lastName 
+				})
+			} catch (slackError) {
+				console.error('Slack notification failed:', slackError)
+			}
+
 			const mockReferralCode = 'DEMO' + Math.random().toString(36).substr(2, 6).toUpperCase()
 			res.status(200).json({ 
 				success: true, 
