@@ -80,7 +80,7 @@ export default function Leaderboard() {
 						alt='No scores yet'
 						className={styles.emptyImage}
 					/>
-					<span style={{ textWrap: 'pretty', display: 'inline-block' }}>Scores will be posted soon</span>
+					<span style={{ textWrap: 'pretty', display: 'inline-block' }}>Leaderboard to be announced soon</span>
 				</div>
 			</div>
 		)
