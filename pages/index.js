@@ -134,7 +134,7 @@ export default function Home() {
           <div className={styles.howItWorksSection}>
             <div className={styles.howitworksContent}>
               <div className={styles.sectionHeader}>
-                <h2 className={styles.sectionTitle}>How the participate & start earning rewards today</h2>
+                <h2 className={styles.sectionTitle}>How to participate & start earning rewards today</h2>
                 <p className={styles.sectionSubtitle}>
                   For every qualifying business that signs up through your link, you earn $1,000, and they earn $1,000 too.
                 </p>
