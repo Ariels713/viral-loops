@@ -228,7 +228,7 @@ export default function ViralLoopsForm() {
 	return (
 		<div className={styles.container}>
 			<div className={styles.header}>
-				<h2 className={styles.title}>Join Our Referral Program</h2>
+				<h2 className={styles.title}>Join Summer of Rho</h2>
 				<p className={styles.subtitle}>
 					Have your referrals use this unique link to apply for a Rho Account to count toward your score.
 				</p>
