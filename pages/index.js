@@ -63,13 +63,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Summer of Rho 2025 - Referral Program</title>
+        <title>Summer of Rho 2025</title>
         <meta name="description" content="The easiest $100K your startup could make. Join the Summer of Rho 2025 referral program!" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         
         {/* OpenGraph Meta Tags */}
-        <meta property="og:title" content="Summer of Rho 2025 - Referral Program" />
+        <meta property="og:title" content="Summer of Rho 2025" />
         <meta property="og:description" content="The easiest $100K your startup could make. Join the Summer of Rho 2025 referral program!" />
         <meta property="og:image" content="/images/meta_gif.gif" />
         <meta property="og:image:type" content="image/gif" />
@@ -81,7 +81,7 @@ export default function Home() {
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Summer of Rho 2025 - Referral Program" />
+        <meta name="twitter:title" content="Summer of Rho 2025" />
         <meta name="twitter:description" content="The easiest $100K your startup could make. Join the Summer of Rho 2025 referral program!" />
         <meta name="twitter:image" content="/images/meta_gif.gif" />
         
@@ -96,7 +96,7 @@ export default function Home() {
               <div className={styles.logoContainer}>
                 <Image
                   src="/images/summer-of-rho-2025.png"
-                  alt="Summer of Rho 2025 - Referral Program"
+                  alt="Summer of Rho 2025"
                   width={600}
                   height={300}
                   className={styles.heroImage}
