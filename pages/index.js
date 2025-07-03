@@ -63,30 +63,30 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Summer of Rho 2025</title>
-        <meta name="description" content="The easiest $100K your startup could make. Join the Summer of Rho 2025 referral program!" />
+        <title>Summer of Rho: Compete for $100K</title>
+        <meta name="description" content="The easiest $100K your startup could make. Join the Summer of Rho: Compete for $100K" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/images/sunset.png" />
 
         {/* OpenGraph Meta Tags */}
-        <meta property="og:title" content="Summer of Rho 2025" />
-        <meta property="og:description" content="The easiest $100K your startup could make. Join the Summer of Rho 2025 referral program!" />
+        <meta property="og:title" content="Summer of Rho: Compete for $100K" />
+        <meta property="og:description" content="The easiest $100K your startup could make. Join the Summer of Rho: Compete for $100K" />
         <meta property="og:image" content="/images/meta_gif.gif" />
         <meta property="og:image:type" content="image/gif" />
         <meta property="og:image:width" content="480" />
         <meta property="og:image:height" content="270" />
         <meta property="og:url" content="/" />
-        <meta property="og:site_name" content="Summer of Rho 2025" />
+        <meta property="og:site_name" content="Summer of Rho: Compete for $100K" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Summer of Rho 2025" />
-        <meta name="twitter:description" content="The easiest $100K your startup could make. Join the Summer of Rho 2025 referral program!" />
+        <meta name="twitter:title" content="Summer of Rho: Compete for $100K" />
+        <meta name="twitter:description" content="The easiest $100K your startup could make. Join the Summer of Rho: Compete for $100K" />
         <meta name="twitter:image" content="/images/meta_gif.gif" />
 
         {/* Additional meta tags for better compatibility */}
-        <meta property="og:image:alt" content="Summer of Rho 2025 referral program animation" />
+        <meta property="og:image:alt" content="Summer of Rho: Compete for $100K animation" />
       </Head>
       <div className={styles.page}>
         <main className={styles.main}>
