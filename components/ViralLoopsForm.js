@@ -55,7 +55,7 @@ export default function ViralLoopsForm() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		
+
 		if (!validateForm()) return
 
 		try {
@@ -79,7 +79,7 @@ export default function ViralLoopsForm() {
 			}
 
 			const data = await response.json()
-			
+
 			if (data.success) {
 				// Store registration data in localStorage
 				const registrationInfo = {
@@ -92,7 +92,7 @@ export default function ViralLoopsForm() {
 					registrationDate: new Date().toISOString(),
 					isMock: data.mock || false
 				}
-				
+
 				localStorage.setItem('viralLoopsRegistration', JSON.stringify(registrationInfo))
 				setRegistrationData(registrationInfo)
 				setShowForm(false)
@@ -153,7 +153,7 @@ export default function ViralLoopsForm() {
 							<code className={styles.referralCode}>
 								{registrationData.referralCode}
 							</code>
-							<button 
+							<button
 								onClick={() => copyToClipboard(registrationData.referralCode)}
 								className={styles.copyButton}
 								title="Copy to clipboard"
@@ -166,13 +166,13 @@ export default function ViralLoopsForm() {
 					<div className={styles.referralLinkContainer}>
 						<label className={styles.label}>Your Referral Link</label>
 						<div className={styles.linkDisplay}>
-							<input 
-								type="text" 
-								value={registrationData.referralLink} 
-								readOnly 
+							<input
+								type="text"
+								value={registrationData.referralLink}
+								readOnly
 								className={styles.linkInput}
 							/>
-							<button 
+							<button
 								onClick={() => copyToClipboard(registrationData.referralLink)}
 								className={styles.copyButton}
 								title="Copy to clipboard"
@@ -210,7 +210,7 @@ export default function ViralLoopsForm() {
 				</div>
 
 				<div className={styles.footer}>
-					<button 
+					<button
 						onClick={handleNewRegistration}
 						className={styles.resetButton}
 					>
@@ -230,7 +230,7 @@ export default function ViralLoopsForm() {
 			<div className={styles.header}>
 				<h2 className={styles.title}>Join Our Referral Program</h2>
 				<p className={styles.subtitle}>
-					Refer friends and earn amazing rewards for every successful referral!
+					Have your referrals use this unique link to apply for a Rho Account to count toward your score.
 				</p>
 			</div>
 
@@ -289,8 +289,8 @@ export default function ViralLoopsForm() {
 					</div>
 				)}
 
-				<button 
-					type="submit" 
+				<button
+					type="submit"
 					className={styles.submitButton}
 					disabled={loading}
 				>

@@ -66,8 +66,8 @@ export default function Home() {
         <title>Summer of Rho 2025</title>
         <meta name="description" content="The easiest $100K your startup could make. Join the Summer of Rho 2025 referral program!" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        
+        <link rel="icon" href="/images/sunset.png" />
+
         {/* OpenGraph Meta Tags */}
         <meta property="og:title" content="Summer of Rho 2025" />
         <meta property="og:description" content="The easiest $100K your startup could make. Join the Summer of Rho 2025 referral program!" />
@@ -78,13 +78,13 @@ export default function Home() {
         <meta property="og:url" content="/" />
         <meta property="og:site_name" content="Summer of Rho 2025" />
         <meta property="og:type" content="website" />
-        
+
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Summer of Rho 2025" />
         <meta name="twitter:description" content="The easiest $100K your startup could make. Join the Summer of Rho 2025 referral program!" />
         <meta name="twitter:image" content="/images/meta_gif.gif" />
-        
+
         {/* Additional meta tags for better compatibility */}
         <meta property="og:image:alt" content="Summer of Rho 2025 referral program animation" />
       </Head>
@@ -109,8 +109,7 @@ export default function Home() {
               </h2>
 
               <p className={styles.subheadline}>
-                Starting in July, earn $1000 for every qualified business you refer to Rho -
-                and compete for the $100,000 Grand Prize. Terms and conditions apply.*
+                Starting in July, earn $1000 for every qualified business you refer to Rho - and compete for the $100,000 Grand Prize. Terms and conditions apply.*
               </p>
 
               {/* Video Player */}
@@ -135,9 +134,9 @@ export default function Home() {
           <div className={styles.howItWorksSection}>
             <div className={styles.howitworksContent}>
               <div className={styles.sectionHeader}>
-                <h2 className={styles.sectionTitle}>How to participate & start earning rewards today</h2>
+                <h2 className={styles.sectionTitle}>How the participate & start earning rewards today</h2>
                 <p className={styles.sectionSubtitle}>
-                  From July to August 15th, earn more rewards for every qualified business you refer to Rho. Terms and conditions apply.
+                  For every qualifying business that signs up through your link, you earn $1,000, and they earn $1,000 too.
                 </p>
               </div>
               {/* add a divider */}
@@ -174,9 +173,9 @@ export default function Home() {
                 {/* Step 2 */}
                 <div className={styles.step}>
                   <div className={styles.stepContent}>
-                  <div className={styles.stepNumberContent}>
-                    <div className={styles.stepNumber}>02.</div>
-                    <h3 className={styles.stepTitle}>Earn $1,000 for every qualifying business you refer</h3>
+                    <div className={styles.stepNumberContent}>
+                      <div className={styles.stepNumber}>02.</div>
+                      <h3 className={styles.stepTitle}>Earn $1,000 for every qualifying business you refer</h3>
                     </div>
                     <p className={styles.stepDescription}>
                       For every qualifying business that signs up through your link, you earn $1,000, and they earn $1,000 too.
@@ -327,27 +326,27 @@ export default function Home() {
               </p>
               <h4 className={styles.disclaimerSubtitle}>4. How to Enter</h4>
               <div className={styles.disclaimerText}>
-              <p className={styles.disclaimerText}>
-                There is no purchase necessary to participate. The usage of the Sponsor's services and products will not increase the chances of winning.
-              </p>
-              <p className={styles.disclaimerText}>
-                <strong>Submission:</strong> Entrants that are eligible for this Contest can sign up for the Contest using the Contest's landing page at summerofrho.com. Entrants will then be provided a custom online link that they can send to other U.S.-based corporate entities that are deemed as startups by Sponsor based on criteria including, but not limited to, company age, revenue, and funding status, as determined by Sponsor at its sole discretion, to submit themselves as a "Potential Referral." In addition, at most two (2) entities that are under the control of the same ultimate beneficial owner ("UBO") registered with Sponsor will count as Potential Referrals during this Contest. Additional entities controlled by the same UBO, even if submitted with the referral link of another entrant, will not count as Potential Referrals. All Potential Referral submissions will be routed to an appropriate Sponsor sales team member to determine a Potential Referral's eligibility to open a deposit account with a Sponsor Bank (as defined in Rho's Terms of Service) through the Rho Services (as defined in Rho's Terms of Service) ("Rho Checking Account") and/or to open a Rho Treasury Account (as defined in Rho's Terms of Service).
-              </p>
-              <p className={styles.disclaimerText}>
-                <strong>Deposits:</strong> If that Potential Referral opens a Rho Checking Account and/or Rho Treasury Account and maintains an average deposit balance of $350,000 or more in that account or across both accounts for ninety (90) days after the opening of that account ("Deposit Balance"), the Potential Referral may be deemed as an "Qualified Referral" for that entrant. Sponsor will determine, at its sole discretion, whether a Potential Referral qualifies as an Qualified Referral based on the criteria outlined above, including account opening and maintaining the required Deposit Balance.
-              </p>
-              <p className={styles.disclaimerText}>
-                <strong>Credit for Submission:</strong> Once an entity is submitted as a Potential Referral by an entrant, that entity may no longer be eligible to be submitted as a Potential Referral by another entrant. The earliest submission of a Potential Referral by an entrant that is received by Sponsor shall receive credit for that submission. It is at Sponsor's sole discretion to judge the assignment of credit to an entrant for a submission of a Potential Referral.
-              </p>
-              <p className={styles.disclaimerText}>
-                <strong>Leaderboard:</strong> During the Contest Period, Sponsor shall maintain a leaderboard that depicts the number of submissions of Potential Referrals from entrants with the most submissions. Entrants shall be identified by their first names and the first letter of their last names. The leaderboard will be updated periodically by Sponsor. However, the final count of Qualified Referrals will not be determined until the final verification by Sponsor of their eligibility at the end of their 90-day periods. All information presented by the leaderboard is preliminary and will not be used by Sponsor to determine the Contest awards.
-              </p>
-              <p className={styles.disclaimerText}>
-                <strong>Limit:</strong> There is no limit to the total number of Potential Referrals that an entrant can submit during the Contest Period. An entrant cannot submit its own entity as a Potential Referral. However, it can be submitted as a Potential Referral in the Contest by another entrant.
-              </p>
-              <p className={styles.disclaimerText}>
-                <strong>Other Offers:</strong> This Contest may be combined with any other promotions or offers organized by Sponsor, subject to their terms and conditions. Potential Referrals submitted through the Contest's referral links will be evaluated for their eligibility for those separate promotions by a Sponsor sales team member. Eligibility will be determined by those promotions' respective terms and conditions and will not affect eligibility for this Contest. Potential Referrals will be eligible for the awards provided by those promotions in addition to any prizes awarded from this Contest.
-              </p>
+                <p className={styles.disclaimerText}>
+                  There is no purchase necessary to participate. The usage of the Sponsor's services and products will not increase the chances of winning.
+                </p>
+                <p className={styles.disclaimerText}>
+                  <strong>Submission:</strong> Entrants that are eligible for this Contest can sign up for the Contest using the Contest's landing page at summerofrho.com. Entrants will then be provided a custom online link that they can send to other U.S.-based corporate entities that are deemed as startups by Sponsor based on criteria including, but not limited to, company age, revenue, and funding status, as determined by Sponsor at its sole discretion, to submit themselves as a "Potential Referral." In addition, at most two (2) entities that are under the control of the same ultimate beneficial owner ("UBO") registered with Sponsor will count as Potential Referrals during this Contest. Additional entities controlled by the same UBO, even if submitted with the referral link of another entrant, will not count as Potential Referrals. All Potential Referral submissions will be routed to an appropriate Sponsor sales team member to determine a Potential Referral's eligibility to open a deposit account with a Sponsor Bank (as defined in Rho's Terms of Service) through the Rho Services (as defined in Rho's Terms of Service) ("Rho Checking Account") and/or to open a Rho Treasury Account (as defined in Rho's Terms of Service).
+                </p>
+                <p className={styles.disclaimerText}>
+                  <strong>Deposits:</strong> If that Potential Referral opens a Rho Checking Account and/or Rho Treasury Account and maintains an average deposit balance of $350,000 or more in that account or across both accounts for ninety (90) days after the opening of that account ("Deposit Balance"), the Potential Referral may be deemed as an "Qualified Referral" for that entrant. Sponsor will determine, at its sole discretion, whether a Potential Referral qualifies as an Qualified Referral based on the criteria outlined above, including account opening and maintaining the required Deposit Balance.
+                </p>
+                <p className={styles.disclaimerText}>
+                  <strong>Credit for Submission:</strong> Once an entity is submitted as a Potential Referral by an entrant, that entity may no longer be eligible to be submitted as a Potential Referral by another entrant. The earliest submission of a Potential Referral by an entrant that is received by Sponsor shall receive credit for that submission. It is at Sponsor's sole discretion to judge the assignment of credit to an entrant for a submission of a Potential Referral.
+                </p>
+                <p className={styles.disclaimerText}>
+                  <strong>Leaderboard:</strong> During the Contest Period, Sponsor shall maintain a leaderboard that depicts the number of submissions of Potential Referrals from entrants with the most submissions. Entrants shall be identified by their first names and the first letter of their last names. The leaderboard will be updated periodically by Sponsor. However, the final count of Qualified Referrals will not be determined until the final verification by Sponsor of their eligibility at the end of their 90-day periods. All information presented by the leaderboard is preliminary and will not be used by Sponsor to determine the Contest awards.
+                </p>
+                <p className={styles.disclaimerText}>
+                  <strong>Limit:</strong> There is no limit to the total number of Potential Referrals that an entrant can submit during the Contest Period. An entrant cannot submit its own entity as a Potential Referral. However, it can be submitted as a Potential Referral in the Contest by another entrant.
+                </p>
+                <p className={styles.disclaimerText}>
+                  <strong>Other Offers:</strong> This Contest may be combined with any other promotions or offers organized by Sponsor, subject to their terms and conditions. Potential Referrals submitted through the Contest's referral links will be evaluated for their eligibility for those separate promotions by a Sponsor sales team member. Eligibility will be determined by those promotions' respective terms and conditions and will not affect eligibility for this Contest. Potential Referrals will be eligible for the awards provided by those promotions in addition to any prizes awarded from this Contest.
+                </p>
               </div>
               <h4 className={styles.disclaimerSubtitle}>5. Prize</h4>
               <p className={styles.disclaimerText}>
@@ -365,30 +364,30 @@ export default function Home() {
               </p>
               <h4 className={styles.disclaimerSubtitle}>7. Winner Selection Process</h4>
               <div className={styles.disclaimerText}>
-              <p className={styles.disclaimerText}>
-                After the end of the Contest Period, Sponsor will assess the total number of Qualified Referrals made by each entrant during the Contest Period. The determination of whether a Potential Referral qualifies as an Qualified Referral shall be made at the end of the 90-day period following the opening of its Rho Checking Account and/or Rho Treasury Account and the initial deposit of its required Deposit Balance. Any Potential Referral that did not maintain the Deposit Balance throughout this 90-day period shall be ineligible for any Contest prizes, and the entrant that submitted this Potential Referral shall not receive credit towards its progress for the Grand Prize or the Second Prize.
-              </p>
-              <p className={styles.disclaimerText}>
-                The entrant with the highest number of Qualified Referrals shall be awarded the Grand Prize. The entrant must have made at least ten (10) Qualified Referrals to be eligible. If multiple entrants have the same highest number of credited Qualified Referrals, the aggregate amounts of Deposit Balances made by the entrants' Qualified Referrals will be used as a tiebreaker. For example, if two entrants are both credited with thirty (30) Qualified Referrals, the entrant whose Qualified Referrals made an aggregate amount of Deposit Balance totaling $20,000,000 will win the Grand Prize over the entrant whose Qualified Referrals made an aggregate amount of Deposit Balance totaling $18,000,000. The latter entrant will be given the Second Prize, if eligible, as a result.
-              </p>
-              <p className={styles.disclaimerText}>
-                The entrant with the second highest number of Qualified Referrals, or the runner-up of a tiebreaker for the Grand Prize, shall be awarded the Second Prize. The entrant must have made at least five (5) Qualified Referrals to be eligible. If multiple entrants have the same second highest number of credited Qualified Referrals, including as nonwinners of a tiebreaker for the Grand prize, the aggregate amounts of Deposit Balances made by the entrants' Qualified Referrals will be used as a tiebreaker. For example, if two entrants are both credited with twenty (20) Qualified Referrals, the entrant whose Qualified Referrals made an aggregate amount of Deposit Balance totaling $15,000,000 will win the Second Prize over the entrant whose Qualified Referrals made an aggregate amount of Deposit Balance totaling $13,000,000. The latter entrant(s) will receive only the referral bonus, if eligible, described in Section 7.4, as a result.
-              </p>
-              <p className={styles.disclaimerText}>
-                All entrants shall be awarded with a referral bonus that is equal to $1,000 per Qualified Referral made. Entrants do not need to make a minimum number of Qualified Referrals to be eligible for this referral bonus.
-              </p>
-              <p className={styles.disclaimerText}>
-                All submitted Potential Referrals that are deemed as Qualified Referrals shall be credited with $1,000 to their Rho Checking Account.
-              </p>
+                <p className={styles.disclaimerText}>
+                  After the end of the Contest Period, Sponsor will assess the total number of Qualified Referrals made by each entrant during the Contest Period. The determination of whether a Potential Referral qualifies as an Qualified Referral shall be made at the end of the 90-day period following the opening of its Rho Checking Account and/or Rho Treasury Account and the initial deposit of its required Deposit Balance. Any Potential Referral that did not maintain the Deposit Balance throughout this 90-day period shall be ineligible for any Contest prizes, and the entrant that submitted this Potential Referral shall not receive credit towards its progress for the Grand Prize or the Second Prize.
+                </p>
+                <p className={styles.disclaimerText}>
+                  The entrant with the highest number of Qualified Referrals shall be awarded the Grand Prize. The entrant must have made at least ten (10) Qualified Referrals to be eligible. If multiple entrants have the same highest number of credited Qualified Referrals, the aggregate amounts of Deposit Balances made by the entrants' Qualified Referrals will be used as a tiebreaker. For example, if two entrants are both credited with thirty (30) Qualified Referrals, the entrant whose Qualified Referrals made an aggregate amount of Deposit Balance totaling $20,000,000 will win the Grand Prize over the entrant whose Qualified Referrals made an aggregate amount of Deposit Balance totaling $18,000,000. The latter entrant will be given the Second Prize, if eligible, as a result.
+                </p>
+                <p className={styles.disclaimerText}>
+                  The entrant with the second highest number of Qualified Referrals, or the runner-up of a tiebreaker for the Grand Prize, shall be awarded the Second Prize. The entrant must have made at least five (5) Qualified Referrals to be eligible. If multiple entrants have the same second highest number of credited Qualified Referrals, including as nonwinners of a tiebreaker for the Grand prize, the aggregate amounts of Deposit Balances made by the entrants' Qualified Referrals will be used as a tiebreaker. For example, if two entrants are both credited with twenty (20) Qualified Referrals, the entrant whose Qualified Referrals made an aggregate amount of Deposit Balance totaling $15,000,000 will win the Second Prize over the entrant whose Qualified Referrals made an aggregate amount of Deposit Balance totaling $13,000,000. The latter entrant(s) will receive only the referral bonus, if eligible, described in Section 7.4, as a result.
+                </p>
+                <p className={styles.disclaimerText}>
+                  All entrants shall be awarded with a referral bonus that is equal to $1,000 per Qualified Referral made. Entrants do not need to make a minimum number of Qualified Referrals to be eligible for this referral bonus.
+                </p>
+                <p className={styles.disclaimerText}>
+                  All submitted Potential Referrals that are deemed as Qualified Referrals shall be credited with $1,000 to their Rho Checking Account.
+                </p>
               </div>
               <h4 className={styles.disclaimerSubtitle}>8. Winner Notification and Verification</h4>
               <div className={styles.disclaimerText}>
-              <p className={styles.disclaimerText}>
-                Sponsor will notify all entrants eligible for a prize via a Linkedin message or email within seven (7) business days of the determination of an entrant's eligibility for a prize (the "Notification Date"). Eligible entrants must respond within fourteen (14) business days of the Notification Date and will be required to complete and return an Affidavit of Eligibility, Release of Liability, Publicity Release (where lawful), and IRS Form W-9. Since referrals may be made until the end of the Contest Period, such Notification Date may be set up to ninety (90) days after the conclusion of the Contest Period to allow for verification of Qualified Referrals.
-              </p>
-              <p className={styles.disclaimerText}>
-                If an eligible entrant cannot be contacted, fails to sign and return the required documents within the required time period, does not comply with these Rules, or prize is returned as undeliverable, then that entrant forfeits the prize. If an entrant that is eligible for the Grand Prize or the Second Prize is disqualified for any reason, then their prize may be awarded to the entrant with the next most Qualified Referrals, if any, at Sponsor's sole discretion. If an eligible entrant's Second Prize is upgraded to a Grand Prize in this manner, then they will no longer be eligible for this initial Second Prize, which may be awarded to the entrant with the next most Qualified Referrals, if any, at Sponsor's sole discretion.
-              </p>
+                <p className={styles.disclaimerText}>
+                  Sponsor will notify all entrants eligible for a prize via a Linkedin message or email within seven (7) business days of the determination of an entrant's eligibility for a prize (the "Notification Date"). Eligible entrants must respond within fourteen (14) business days of the Notification Date and will be required to complete and return an Affidavit of Eligibility, Release of Liability, Publicity Release (where lawful), and IRS Form W-9. Since referrals may be made until the end of the Contest Period, such Notification Date may be set up to ninety (90) days after the conclusion of the Contest Period to allow for verification of Qualified Referrals.
+                </p>
+                <p className={styles.disclaimerText}>
+                  If an eligible entrant cannot be contacted, fails to sign and return the required documents within the required time period, does not comply with these Rules, or prize is returned as undeliverable, then that entrant forfeits the prize. If an entrant that is eligible for the Grand Prize or the Second Prize is disqualified for any reason, then their prize may be awarded to the entrant with the next most Qualified Referrals, if any, at Sponsor's sole discretion. If an eligible entrant's Second Prize is upgraded to a Grand Prize in this manner, then they will no longer be eligible for this initial Second Prize, which may be awarded to the entrant with the next most Qualified Referrals, if any, at Sponsor's sole discretion.
+                </p>
               </div>
               <h4 className={styles.disclaimerSubtitle}>9. Publicity Release</h4>
               <p className={styles.disclaimerText}>
@@ -396,24 +395,24 @@ export default function Home() {
               </p>
               <h4 className={styles.disclaimerSubtitle}>10. General Conditions</h4>
               <div className={styles.disclaimerText}>
-              <p className={styles.disclaimerText}>
-                Sponsor reserves the right to cancel, suspend, or modify the Contest if fraud, technical failure, or any other factor impairs the integrity or proper functioning of the Contest, as determined by Sponsor in its sole discretion. Sponsor also reserves the right in its sole discretion to terminate, suspend, or modify the Contest at any time for any reason, including but not limited to changes in business priorities, regulatory concerns, or conference participation changes. If the Contest is terminated before the designated end date, Sponsor may, in its sole discretion, award the prize(s) from among all eligible Potential Referrals received up to the time of termination, provided that such Potential Referrals meet all eligibility requirements set forth in these Rules, including the minimum referral requirements for each prize tier.
-              </p>
-              <p className={styles.disclaimerText}>
-                Sponsor also reserves the right to disqualify any individual Sponsor believes has tampered with the entry process or violated these Rules and verify eligibility requirements of each entrant. All Contest materials are subject to verification and are void if (i) not obtained in accordance with these Rules and through legitimate channels, (ii) any part is counterfeited, altered, defective, damaged, illegible, reproduced, tampered with, mutilated or irregular in any way, (iii) are obtained where prohibited, or (iv) they contain printing, typographical, mechanical, or other errors.
-              </p>
-              <p className={styles.disclaimerText}>
-                Neither Sponsor nor anyone acting on its behalf will enter into any communications with any entrant regarding this Contest, except as expressly set forth in these Rules.
-              </p>
-              <p className={styles.disclaimerText}>
-                By participating in this Contest, entrants release the Sponsor and each and all of the Contest Entities, from any and all liability, damages or causes of action (however named or described) with respect to or arising out of participation in the Contest, and/or the receipt or use/misuse of any prize awarded, including, without limitation, liability for personal injury, death or property damage, except where such release is prohibited by law or in cases of gross negligence or willful misconduct.
-              </p>
-              <p className={styles.disclaimerText}>
-                Entrants assume all risk of loss, damage, destruction, delay or misdirection of Contest materials submitted to Sponsor. Failure to comply with these Rules may result in disqualification from the Contest.
-              </p>
-              <p className={styles.disclaimerText}>
-                <strong>WARNING:</strong> ANY ATTEMPT BY AN ENTRANT OR ANY OTHER INDIVIDUAL TO DELIBERATELY DAMAGE ANY WEBSITE ASSOCIATED WITH THIS CONTEST OR UNDERMINE THE LEGITIMATE OPERATION OF THE CONTEST MAY BE A VIOLATION OF CRIMINAL AND CIVIL LAW, AND, SHOULD SUCH AN ATTEMPT BE MADE, SPONSOR RESERVES THE RIGHT TO PROSECUTE AND SEEK DAMAGES (INCLUDING ATTORNEY'S FEES) FROM ANY SUCH PERSON TO THE FULLEST EXTENT PERMITTED BY LAW. SPONSOR'S FAILURE TO ENFORCE ANY TERM OF THESE OFFICIAL RULES SHALL NOT CONSTITUTE A WAIVER OF THESE PROVISIONS.
-              </p>
+                <p className={styles.disclaimerText}>
+                  Sponsor reserves the right to cancel, suspend, or modify the Contest if fraud, technical failure, or any other factor impairs the integrity or proper functioning of the Contest, as determined by Sponsor in its sole discretion. Sponsor also reserves the right in its sole discretion to terminate, suspend, or modify the Contest at any time for any reason, including but not limited to changes in business priorities, regulatory concerns, or conference participation changes. If the Contest is terminated before the designated end date, Sponsor may, in its sole discretion, award the prize(s) from among all eligible Potential Referrals received up to the time of termination, provided that such Potential Referrals meet all eligibility requirements set forth in these Rules, including the minimum referral requirements for each prize tier.
+                </p>
+                <p className={styles.disclaimerText}>
+                  Sponsor also reserves the right to disqualify any individual Sponsor believes has tampered with the entry process or violated these Rules and verify eligibility requirements of each entrant. All Contest materials are subject to verification and are void if (i) not obtained in accordance with these Rules and through legitimate channels, (ii) any part is counterfeited, altered, defective, damaged, illegible, reproduced, tampered with, mutilated or irregular in any way, (iii) are obtained where prohibited, or (iv) they contain printing, typographical, mechanical, or other errors.
+                </p>
+                <p className={styles.disclaimerText}>
+                  Neither Sponsor nor anyone acting on its behalf will enter into any communications with any entrant regarding this Contest, except as expressly set forth in these Rules.
+                </p>
+                <p className={styles.disclaimerText}>
+                  By participating in this Contest, entrants release the Sponsor and each and all of the Contest Entities, from any and all liability, damages or causes of action (however named or described) with respect to or arising out of participation in the Contest, and/or the receipt or use/misuse of any prize awarded, including, without limitation, liability for personal injury, death or property damage, except where such release is prohibited by law or in cases of gross negligence or willful misconduct.
+                </p>
+                <p className={styles.disclaimerText}>
+                  Entrants assume all risk of loss, damage, destruction, delay or misdirection of Contest materials submitted to Sponsor. Failure to comply with these Rules may result in disqualification from the Contest.
+                </p>
+                <p className={styles.disclaimerText}>
+                  <strong>WARNING:</strong> ANY ATTEMPT BY AN ENTRANT OR ANY OTHER INDIVIDUAL TO DELIBERATELY DAMAGE ANY WEBSITE ASSOCIATED WITH THIS CONTEST OR UNDERMINE THE LEGITIMATE OPERATION OF THE CONTEST MAY BE A VIOLATION OF CRIMINAL AND CIVIL LAW, AND, SHOULD SUCH AN ATTEMPT BE MADE, SPONSOR RESERVES THE RIGHT TO PROSECUTE AND SEEK DAMAGES (INCLUDING ATTORNEY'S FEES) FROM ANY SUCH PERSON TO THE FULLEST EXTENT PERMITTED BY LAW. SPONSOR'S FAILURE TO ENFORCE ANY TERM OF THESE OFFICIAL RULES SHALL NOT CONSTITUTE A WAIVER OF THESE PROVISIONS.
+                </p>
               </div>
               <h4 className={styles.disclaimerSubtitle}>11. Release and Liability Limit</h4>
               <p className={styles.disclaimerText}>
