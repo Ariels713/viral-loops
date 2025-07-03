@@ -125,12 +125,22 @@
   font-display: swap;
 }
 
+/* Basier Circle Font Declaration */
+@font-face {
+  font-family: 'Basier Circle';
+  src: url('/fonts/BasierCircle-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
   /* Font family variables */
   --font-primary: 'Degular Display', Arial, Helvetica, sans-serif;
   --font-secondary: Georgia, serif;
+  --font-tertiary: 'Basier Circle', Arial, Helvetica, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
