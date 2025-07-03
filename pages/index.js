@@ -4,10 +4,11 @@ import { useState } from "react";
 import Leaderboard from '~/components/Leaderboard'
 import ViralLoopsForm from '~/components/ViralLoopsForm.js'
 import styles from "@/styles/Home.module.css";
+import NotificationBar from "@/components/NotificationBar";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState(null);
-
+  const contestEndDate = new Date('2025-08-16T23:59:59');
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
   };
@@ -89,6 +90,9 @@ export default function Home() {
         <meta property="og:image:alt" content="Summer of Rho: Compete for $100K animation" />
       </Head>
       <div className={styles.page}>
+        <NotificationBar
+          targetDate={contestEndDate}
+        />
         <main className={styles.main}>
           {/* Hero Section */}
           <div className={styles.hero}>
