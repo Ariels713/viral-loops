@@ -1,181 +1,183 @@
-# Fonts Directory - Degular Display
+# Fonts Directory - Three-Font Typography System
 
-This directory contains the **Degular Display** font family files and configuration for the project.
+This directory contains the font files and configuration for the project's comprehensive typography system.
 
-## ✅ Current Setup
+## ✅ Current Font Setup
 
-The **Degular Display** font family is now fully configured with all weights and styles:
+### **Primary: Degular Display** (Headers & Sub-Headers)
+The main display font for headlines and titles with multiple weights and styles.
 
-### Available Font Weights & Styles
+### **Secondary: Basier Circle** (Body Text & CTAs)  
+The body text and call-to-action font for readability and engagement.
 
-| Weight | Normal | Italic |
-|--------|--------|--------|
-| **Thin** (100) | ✅ | ✅ |
-| **Light** (300) | ✅ | ✅ |
-| **Regular** (400) | ✅ | ✅ |
-| **Medium** (500) | ✅ | ✅ |
-| **Semibold** (600) | ✅ | ✅ |
-| **Bold** (700) | ✅ | ✅ |
-| **Black** (900) | ✅ | ✅ |
+### **Fallback: System Fonts**
+Arial, Helvetica, sans-serif as fallbacks for reliability.
 
-## Usage Examples
+## 🎨 Typography Hierarchy
 
-### Using CSS Variables (Recommended)
-
-The primary font is available through CSS variables:
-
+### **Headers (Degular Display)**
 ```css
-.component {
-  font-family: var(--font-primary); /* Uses Degular Display with fallbacks */
-}
+font-family: "Degular Display";
+font-size: 64px;
+font-style: normal;
+font-weight: 500;
+line-height: 95%;
+letter-spacing: 1.28px;
 ```
+**Used for:** Main headlines, section titles, major headings
 
-### Using Specific Weights
-
+### **Sub-Headers (Degular Display)**
 ```css
-/* Thin */
-.thin-text {
-  font-family: var(--font-primary);
-  font-weight: 100;
-}
-
-/* Light */
-.light-text {
-  font-family: var(--font-primary);
-  font-weight: 300;
-}
-
-/* Regular */
-.regular-text {
-  font-family: var(--font-primary);
-  font-weight: 400;
-}
-
-/* Medium */
-.medium-text {
-  font-family: var(--font-primary);
-  font-weight: 500;
-}
-
-/* Semibold */
-.semibold-text {
-  font-family: var(--font-primary);
-  font-weight: 600;
-}
-
-/* Bold */
-.bold-text {
-  font-family: var(--font-primary);
-  font-weight: 700;
-}
-
-/* Black */
-.black-text {
-  font-family: var(--font-primary);
-  font-weight: 900;
-}
+font-family: "Degular Display";
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: 110%;
 ```
+**Used for:** Step titles, form titles, component headers, FAQ questions
 
-### Using Italic Styles
-
+### **Body Text & CTAs (Basier Circle)**
 ```css
-.italic-text {
-  font-family: var(--font-primary);
-  font-style: italic;
-}
-
-/* Combine with any weight */
-.bold-italic {
-  font-family: var(--font-primary);
-  font-weight: 700;
-  font-style: italic;
-}
+font-family: "Basier Circle";
+font-size: 21px;
+font-style: normal;
+font-weight: 400;
+line-height: 110%;
+letter-spacing: -0.42px;
 ```
+**Used for:** Descriptions, disclaimers, button text, body copy
 
-### Direct Font Family Usage
+## 📁 Available Font Files
 
-```css
-.component {
-  font-family: 'Degular Display', Arial, Helvetica, sans-serif;
-}
-```
+### Degular Display (14 variants)
+- **Weights**: Thin (100), Light (300), Regular (400), Medium (500), Semibold (600), Bold (700), Black (900)
+- **Styles**: Normal and Italic for each weight
+- **Formats**: WOFF2 (primary), WOFF (fallback)
 
-## React/Next.js Component Examples
+### Basier Circle
+- **Weight**: Regular (400)
+- **Format**: OTF
 
-### Inline Styles
+## 🚀 Usage Examples
 
+### React/Next.js Components
+
+**Headers:**
 ```jsx
-<h1 style={{ fontFamily: 'var(--font-primary)', fontWeight: 700 }}>
-  Bold Heading
+<h1 style={{ 
+  fontFamily: '"Degular Display"',
+  fontSize: 'clamp(32px, 6vw, 64px)',
+  fontWeight: 500,
+  lineHeight: '95%',
+  letterSpacing: '1.28px'
+}}>
+  Main Headline
 </h1>
+```
 
-<p style={{ fontFamily: 'var(--font-primary)', fontWeight: 300, fontStyle: 'italic' }}>
-  Light italic text
+**Sub-Headers:**
+```jsx
+<h2 style={{ 
+  fontFamily: '"Degular Display"',
+  fontSize: 'clamp(16px, 3vw, 32px)',
+  fontWeight: 400,
+  lineHeight: '110%'
+}}>
+  Section Title
+</h2>
+```
+
+**Body Text & CTAs:**
+```jsx
+<p style={{ 
+  fontFamily: '"Basier Circle"',
+  fontSize: 'clamp(16px, 3vw, 21px)',
+  fontWeight: 400,
+  lineHeight: '110%',
+  letterSpacing: '-0.42px'
+}}>
+  Description text
 </p>
+
+<button style={{ 
+  fontFamily: '"Basier Circle"',
+  fontSize: '21px',
+  fontWeight: 400,
+  lineHeight: '110%',
+  letterSpacing: '-0.42px'
+}}>
+  Call to Action
+</button>
 ```
 
-### CSS Modules
+### CSS Classes
 
+**Using CSS Variables:**
 ```css
-/* styles/Component.module.css */
-.title {
-  font-family: var(--font-primary);
-  font-weight: 600;
+.header {
+  font-family: var(--font-primary); /* Degular Display */
 }
 
-.subtitle {
-  font-family: var(--font-primary);
+.body-text {
+  font-family: var(--font-tertiary); /* Basier Circle */
+}
+```
+
+**Direct Font Usage:**
+```css
+.main-headline {
+  font-family: "Degular Display";
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 500;
+  line-height: 95%;
+  letter-spacing: 1.28px;
+}
+
+.step-description {
+  font-family: "Basier Circle";
+  font-size: clamp(16px, 3vw, 21px);
   font-weight: 400;
-  font-style: italic;
+  line-height: 110%;
+  letter-spacing: -0.42px;
 }
 ```
 
-### Tailwind CSS (if using)
+## 📱 Responsive Design
 
-You can extend Tailwind config to use Degular Display:
+All typography uses `clamp()` functions for optimal scaling:
+- **Desktop**: Full specified sizes
+- **Tablet**: Proportional scaling with viewport width
+- **Mobile**: Minimum readable sizes maintained
 
-```js
-// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      fontFamily: {
-        'degular': ['Degular Display', 'Arial', 'Helvetica', 'sans-serif'],
-      }
-    }
-  }
-}
-```
+## ⚡ Performance Features
 
-## Performance Features
+- **WOFF2 format** prioritized for modern browsers
+- **WOFF/OTF fallbacks** for broader compatibility  
+- **font-display: swap** ensures text visibility during font load
+- **Efficient loading** with proper fallback chains
 
-- **WOFF2 format** prioritized for modern browsers (smaller file sizes)
-- **WOFF fallback** for older browser support
-- **font-display: swap** ensures text remains visible during font load
-- All weights and styles properly declared for optimal loading
+## 📋 Current Implementation
 
-## File Structure
+### Elements Using Degular Display:
+- Hero headlines
+- Section titles  
+- Step titles
+- FAQ titles
+- Form titles
+- Leaderboard titles
+- Component headers
+- FAQ questions
+- Step numbers
 
-```
-public/fonts/
-├── README.md (this file)
-├── License for Web, 500k monthly page views.pdf
-├── DegularDisplay-Thin.woff2 / .woff
-├── DegularDisplay-ThinItalic.woff2 / .woff
-├── DegularDisplay-Light.woff2 / .woff
-├── DegularDisplay-LightItalic.woff2 / .woff
-├── DegularDisplay-Regular.woff2 / .woff
-├── DegularDisplay-Italic.woff2 / .woff
-├── DegularDisplay-Medium.woff2 / .woff
-├── DegularDisplay-MediumItalic.woff2 / .woff
-├── DegularDisplay-Semibold.woff2 / .woff
-├── DegularDisplay-SemiboldItalic.woff2 / .woff
-├── DegularDisplay-Bold.woff2 / .woff
-├── DegularDisplay-BoldItalic.woff2 / .woff
-├── DegularDisplay-Black.woff2 / .woff
-└── DegularDisplay-BlackItalic.woff2 / .woff
-```
+### Elements Using Basier Circle:
+- Step descriptions
+- Disclaimer text
+- Call-to-action buttons
+- Copy buttons
+- Form submit buttons
+- Reset buttons
+- Contact buttons
 
-## License
+## 📄 License
 
-Please refer to `License for Web, 500k monthly page views.pdf` for usage terms and conditions. 
+Please refer to `License for Web, 500k monthly page views.pdf` for Degular Display usage terms and conditions. 

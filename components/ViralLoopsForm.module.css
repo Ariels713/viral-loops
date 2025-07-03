@@ -6,6 +6,7 @@
 	width: 100%;
 	max-width: 480px;
 	margin: 0 auto;
+	font-family: var(--font-primary);
 }
 
 .header {
@@ -14,16 +15,22 @@
 }
 
 .title {
-	font-size: 24px;
-	font-weight: 700;
+	font-family: "Degular Display";
+	font-size: clamp(20px, 4vw, 32px);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
 	color: #1f2937;
 	margin: 0 0 8px 0;
 }
 
 .subtitle {
+	font-family: "Degular Display";
 	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
 	color: #6b7280;
-	line-height: 1.5;
 	margin: 0;
 }
 
@@ -43,6 +50,7 @@
 	font-size: 14px;
 	font-weight: 600;
 	color: #374151;
+	font-family: var(--font-primary);
 }
 
 .input {
@@ -53,6 +61,7 @@
 	transition: all 0.2s ease;
 	background: #ffffff;
 	color: #374151;
+	font-family: var(--font-primary);
 }
 
 .input:focus {
@@ -72,12 +81,17 @@
 }
 
 .submitButton {
+	font-family: "Basier Circle";
+	font-size: clamp(16px, 3vw, 21px);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
+	letter-spacing: -0.42px;
 	background: #00d4aa;
 	color: #151716;
 	border: none;
 	border-radius: 8px;
 	padding: 14px 24px;
-	font-size: 16px;
 	cursor: pointer;
 	transition: all 0.2s ease;
 	display: flex;
@@ -124,6 +138,7 @@
 	border: 1px solid #fecaca;
 	font-size: 14px;
 	text-align: center;
+	font-family: var(--font-primary);
 }
 
 .success {
@@ -137,8 +152,11 @@
 }
 
 .successTitle {
-	font-size: 20px;
-	font-weight: 700;
+	font-family: "Degular Display";
+	font-size: clamp(24px, 5vw, 32px);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
 	color: #059669;
 	margin: 0 0 8px 0;
 }
@@ -148,6 +166,7 @@
 	color: #6b7280;
 	line-height: 1.5;
 	margin: 0;
+	font-family: var(--font-primary);
 }
 
 .footer {
@@ -160,6 +179,7 @@
 	color: #9ca3af;
 	margin: 0;
 	line-height: 1.4;
+	font-family: var(--font-primary);
 }
 
 /* Referral Code Display Styles */
@@ -178,8 +198,11 @@
 }
 
 .welcomeTitle {
-	font-size: 32px;
-	font-weight: 700;
+	font-family: "Degular Display";
+	font-size: clamp(24px, 5vw, 32px);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
 	color: inherit;
 	margin: 8px 0 4px 0;
 }
@@ -188,6 +211,7 @@
 	font-size: 14px;
 	color: #202422;
 	margin: 0;
+	font-family: var(--font-primary);
 }
 
 .referralCodeContainer,
@@ -238,13 +262,18 @@
 }
 
 .copyButton {
+	font-family: "Basier Circle";
+	font-size: clamp(14px, 2.5vw, 16px);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
+	letter-spacing: -0.42px;
 	background: #f3f4f6;
 	border: 2px solid #e5e7eb;
 	border-radius: 8px;
 	padding: 12px 16px;
 	cursor: pointer;
 	transition: all 0.2s ease;
-	font-size: 16px;
 	min-width: 48px;
 	display: flex;
 	align-items: center;
@@ -270,8 +299,11 @@
 }
 
 .statsTitle {
+	font-family: "Degular Display";
 	font-size: 16px;
-	font-weight: 600;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
 	color: #1e293b;
 	margin: 0 0 16px 0;
 }
@@ -295,12 +327,14 @@
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 	font-weight: 500;
+	font-family: var(--font-primary);
 }
 
 .statValue {
 	font-size: 24px;
 	font-weight: 700;
 	color: #0f172a;
+	font-family: var(--font-primary);
 }
 
 .demoNotice {
@@ -319,12 +353,17 @@
 }
 
 .resetButton {
+	font-family: "Basier Circle";
+	font-size: clamp(12px, 2vw, 14px);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
+	letter-spacing: -0.42px;
 	background: #6b7280;
 	color: #ffffff;
 	border: none;
 	border-radius: 8px;
 	padding: 10px 16px;
-	font-size: 14px;
 	cursor: pointer;
 	transition: all 0.2s ease;
 	margin-bottom: 12px;
