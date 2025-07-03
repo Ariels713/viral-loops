@@ -6,6 +6,7 @@
 	width: 100%;
 	max-width: 480px;
 	margin: 0 auto;
+	font-family: var(--font-primary);
 }
 
 .header {
@@ -14,14 +15,21 @@
 }
 
 .title {
-	font-size: 24px;
-	font-weight: 700;
+	font-family: "Degular Display";
+	font-size: clamp(20px, 4vw, 32px);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
 	color: #fff;
 	margin: 0 0 8px 0;
 }
 
 .subtitle {
+	font-family: "Degular Display";
 	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
 	color: #B4BEB6;
 	margin: 0;
 }
@@ -57,6 +65,7 @@
 	min-width: 40px;
 	margin-right: 16px;
 	text-align: center;
+	font-family: var(--font-primary);
 }
 
 .name {
@@ -64,12 +73,14 @@
 	font-weight: 600;
 	color: #fff;
 	flex: 1;
+	font-family: var(--font-primary);
 }
 
 .referrals {
 	font-size: 14px;
 	color: #6b7280;
 	font-weight: 500;
+	font-family: var(--font-primary);
 }
 
 .footer {
@@ -85,6 +96,7 @@
 	font-size: 14px;
 	cursor: pointer;
 	transition: all 0.2s ease;
+	font-family: var(--font-primary);
 }
 
 /* .refreshButton:hover {
@@ -100,6 +112,7 @@
 	text-align: center;
 	padding: 40px 20px;
 	font-size: 16px;
+	font-family: var(--font-primary);
 }
 
 .loading {

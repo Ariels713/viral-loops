@@ -6,6 +6,7 @@
 	width: 100%;
 	max-width: 480px;
 	margin: 0 auto;
+	font-family: var(--font-primary);
 }
 
 .header {
@@ -14,16 +15,22 @@
 }
 
 .title {
-	font-size: 24px;
-	font-weight: 700;
+	font-family: "Degular Display";
+	font-size: clamp(20px, 4vw, 32px);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
 	color: #1f2937;
 	margin: 0 0 8px 0;
 }
 
 .subtitle {
+	font-family: "Degular Display";
 	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
 	color: #6b7280;
-	line-height: 1.5;
 	margin: 0;
 }
 
@@ -43,6 +50,7 @@
 	font-size: 14px;
 	font-weight: 600;
 	color: #374151;
+	font-family: var(--font-primary);
 }
 
 .input {
@@ -53,6 +61,7 @@
 	transition: all 0.2s ease;
 	background: #ffffff;
 	color: #374151;
+	font-family: var(--font-primary);
 }
 
 .input:focus {
@@ -85,6 +94,7 @@
 	justify-content: center;
 	gap: 8px;
 	margin-top: 8px;
+	font-family: var(--font-primary);
 }
 
 /* .submitButton:hover:not(:disabled) {
@@ -124,6 +134,7 @@
 	border: 1px solid #fecaca;
 	font-size: 14px;
 	text-align: center;
+	font-family: var(--font-primary);
 }
 
 .success {
@@ -137,8 +148,11 @@
 }
 
 .successTitle {
-	font-size: 20px;
-	font-weight: 700;
+	font-family: "Degular Display";
+	font-size: clamp(24px, 5vw, 32px);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
 	color: #059669;
 	margin: 0 0 8px 0;
 }
@@ -148,6 +162,7 @@
 	color: #6b7280;
 	line-height: 1.5;
 	margin: 0;
+	font-family: var(--font-primary);
 }
 
 .footer {
@@ -160,6 +175,7 @@
 	color: #9ca3af;
 	margin: 0;
 	line-height: 1.4;
+	font-family: var(--font-primary);
 }
 
 /* Referral Code Display Styles */
@@ -178,8 +194,11 @@
 }
 
 .welcomeTitle {
-	font-size: 32px;
-	font-weight: 700;
+	font-family: "Degular Display";
+	font-size: clamp(24px, 5vw, 32px);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
 	color: inherit;
 	margin: 8px 0 4px 0;
 }
@@ -188,6 +207,7 @@
 	font-size: 14px;
 	color: #202422;
 	margin: 0;
+	font-family: var(--font-primary);
 }
 
 .referralCodeContainer,
@@ -250,6 +270,7 @@
 	align-items: center;
 	justify-content: center;
 	color: black;
+	font-family: var(--font-primary);
 }
 
 .copyButton:hover {
@@ -270,8 +291,11 @@
 }
 
 .statsTitle {
+	font-family: "Degular Display";
 	font-size: 16px;
-	font-weight: 600;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%;
 	color: #1e293b;
 	margin: 0 0 16px 0;
 }
@@ -295,12 +319,14 @@
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 	font-weight: 500;
+	font-family: var(--font-primary);
 }
 
 .statValue {
 	font-size: 24px;
 	font-weight: 700;
 	color: #0f172a;
+	font-family: var(--font-primary);
 }
 
 .demoNotice {
@@ -328,6 +354,7 @@
 	cursor: pointer;
 	transition: all 0.2s ease;
 	margin-bottom: 12px;
+	font-family: var(--font-primary);
 }
 
 .resetButton:hover {
