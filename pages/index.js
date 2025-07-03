@@ -105,7 +105,7 @@ export default function Home() {
               </div>
 
               <h2 className={styles.headline}>
-                The easiest $100K your startup could make.
+              Refer startups to Rho. It could win you $100K.
               </h2>
 
               <p className={styles.subheadline}>
