@@ -4,44 +4,70 @@ import styles from './NotificationBar.module.css'
 export default function NotificationBar({ 
 	targetDate = new Date('2025-08-16T23:59:59') // Default: August 16th, 2025 at midnight
 }) {
-	const [daysLeft, setDaysLeft] = useState(0)
+	const [timeLeft, setTimeLeft] = useState({
+		days: 0,
+		hours: 0,
+		minutes: 0,
+		seconds: 0,
+		total: 0
+	})
 
 	useEffect(() => {
-		const calculateDaysLeft = () => {
+		const calculateTimeLeft = () => {
 			const now = new Date()
 			const target = new Date(targetDate)
 			const difference = target - now
 			
 			if (difference > 0) {
-				// Calculate full days remaining (round up if there's any time left in the day)
-				return Math.ceil(difference / (1000 * 60 * 60 * 24))
+				const days = Math.floor(difference / (1000 * 60 * 60 * 24))
+				const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+				const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
+				const seconds = Math.floor((difference % (1000 * 60)) / 1000)
+				
+				return {
+					days,
+					hours,
+					minutes,
+					seconds,
+					total: difference
+				}
 			}
 			
-			return 0
+			return {
+				days: 0,
+				hours: 0,
+				minutes: 0,
+				seconds: 0,
+				total: 0
+			}
 		}
 
-		setDaysLeft(calculateDaysLeft())
+		setTimeLeft(calculateTimeLeft())
 		
 		const timer = setInterval(() => {
-			const newDaysLeft = calculateDaysLeft()
-			setDaysLeft(newDaysLeft)
-		}, 1000 * 60 * 60) // Update every hour
+			const newTimeLeft = calculateTimeLeft()
+			setTimeLeft(newTimeLeft)
+		}, 1000) // Update every second
 
 		return () => clearInterval(timer)
 	}, [targetDate])
 
 	const getMessage = () => {
-		if (daysLeft === 1) {
-			return "Last Day to get your referrals in to win $100k!"
-		} else if (daysLeft > 1) {
-			return `Only ${daysLeft} Days to win $100k!`
+		const { days, hours, minutes, seconds } = timeLeft
+		
+		if (days > 0) {
+			return `Summer of Rho '25 ends in ${days} Days, ${minutes} Minutes and ${seconds} Seconds`
+		} else if (hours > 0) {
+			return `Summer of Rho '25 ends in ${hours} Hours, ${minutes} Minutes and ${seconds} Seconds`
+		} else if (minutes > 0 || seconds > 0) {
+			return `Summer of Rho '25 ends in ${minutes} Minutes and ${seconds} Seconds`
 		} else {
-			return "Contest has ended"
+			return "Summer of Rho '25 has ended"
 		}
 	}
 
 	// Don't render if contest has ended
-	if (daysLeft === 0) {
+	if (timeLeft.total === 0) {
 		return null
 	}
 
