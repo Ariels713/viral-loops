@@ -300,14 +300,28 @@ export default function ViralLoopsForm() {
 							Joining...
 						</>
 					) : (
-						'Join Referral Program'
+						'Join Summer of Rho'
 					)}
 				</button>
 			</form>
 
 			<div className={styles.footer}>
 				<p className={styles.footerText}>
-					By joining, you agree to our terms and conditions.
+					By joining, you agree to our{' '}
+					<button
+						onClick={() => {
+							// Scroll to disclaimer section at bottom of page
+							const disclaimer = document.querySelector('.disclaimer') 
+								|| document.querySelector('[class*="disclaimer"]')
+								|| document.querySelector('footer');
+							if (disclaimer) {
+								disclaimer.scrollIntoView({ behavior: 'smooth' });
+							}
+						}}
+						className={styles.termsLink}
+					>
+						terms and conditions
+					</button>.
 				</p>
 			</div>
 		</div>

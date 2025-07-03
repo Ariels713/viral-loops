@@ -82,12 +82,12 @@
 
 .submitButton {
 	font-family: "Basier Circle";
-	font-size: clamp(16px, 3vw, 21px);
+	font-size: clamp(16px, 3vw, 16px);
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 600;
 	line-height: 110%;
 	letter-spacing: -0.42px;
-	background: #00d4aa;
+	background: #03ebc0;
 	color: #151716;
 	border: none;
 	border-radius: 8px;
@@ -101,10 +101,11 @@
 	margin-top: 8px;
 }
 
-/* .submitButton:hover:not(:disabled) {
-	background: #2563eb;
+.submitButton:hover:not(:disabled) {
+	background: #6cfcd6;
 	transform: translateY(-1px);
-} */
+	box-shadow: 0 4px 12px rgba(0, 212, 170, 0.3);
+}
 
 .submitButton:active:not(:disabled) {
 	transform: translateY(0);
@@ -180,6 +181,22 @@
 	margin: 0;
 	line-height: 1.4;
 	font-family: var(--font-primary);
+}
+
+.termsLink {
+	background: none;
+	border: none;
+	padding: 0;
+	font-size: 12px;
+	color: #9ca3af;
+	font-family: var(--font-primary);
+	text-decoration: underline;
+	cursor: pointer;
+	line-height: inherit;
+}
+
+.termsLink:hover {
+	opacity: 0.8;
 }
 
 /* Referral Code Display Styles */
