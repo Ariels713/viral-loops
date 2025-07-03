@@ -130,6 +130,14 @@
 	border: 1px solid #fecaca;
 }
 
+.empty {
+	text-align: center;
+	padding: 40px 20px;
+	font-size: clamp(16px, 3vw, 20px);
+	color: #999ea8;
+	font-family: var(--font-primary);
+}
+
 /* Dark mode support */
 /* @media (prefers-color-scheme: dark) {
 	.container {

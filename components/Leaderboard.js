@@ -66,6 +66,19 @@ export default function Leaderboard() {
 		)
 	}
 
+	const hasSuccessful = leaderboard.some(entry => (entry.successfulReferrals || 0) > 0)
+
+	if (!hasSuccessful) {
+		return (
+			<div className={styles.container}>
+				<div className={styles.header}>
+					<h2 className={styles.title}>🏆 Leaderboard</h2>
+				</div>
+				<div className={styles.empty}>no scores yet, check back later 😎</div>
+			</div>
+		)
+	}
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.header}>
