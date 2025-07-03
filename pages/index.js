@@ -247,7 +247,7 @@ export default function Home() {
                 <div className={styles.step}>
                   <div className={styles.stepContent}>
                     <h3 className={styles.stepTitle}>Have other questions about Summer of Rho?</h3>
-                    <button className={styles.getUrlButton} onClick={() => window.location.href = 'mailto:summerofrho@rho.co?subject=Summer%20of%20Rho%20competition%20question'}>
+                    <button className={styles.getUrlButton} onClick={() => window.location.href = 'mailto:summerofrho@rho.co?subject=Summer%20of%20Rho%20competition%'}>
                       Contact Us
                     </button>
                   </div>
