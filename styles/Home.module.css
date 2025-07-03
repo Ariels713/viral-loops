@@ -130,7 +130,7 @@
   text-align: left;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 
   /* mobile stack the title and subtitle */
@@ -150,6 +150,7 @@
   letter-spacing: 1.28px;
   color: #141716;
   margin: 0 0 16px 0;
+  text-wrap-style: balance;
 }
 
 .sectionSubtitle {
