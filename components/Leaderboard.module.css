@@ -43,8 +43,12 @@
 }
 
 .leaderboardItem:hover {
-	background: #f3f4f6;
+	background: #00d4aa;
 	transform: translateY(-1px);
+
+	& > .name, & > .referrals {
+		color: #000000;
+	}
 }
 
 .position {

@@ -44,11 +44,11 @@
   height: auto;
   border-radius: 12px;
   filter: drop-shadow(0 10px 30px rgba(255, 107, 157, 0.3));
-  transition: all 0.3s ease;
+  transition: all 0.8s ease;
 }
 
 .heroImage:hover {
-  transform: translateY(-4px);
+  transition: all 0.1 ease;
   filter: drop-shadow(0 15px 40px rgba(255, 107, 157, 0.4));
 }
 
@@ -176,6 +176,11 @@
 
 .stepContent {
   max-width: 500px;
+  @media (max-width: 768px) {
+    > .getUrlButton {
+      width: 100%;
+    }
+  }
 }
 
 .stepTitle {
