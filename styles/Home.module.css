@@ -1,3 +1,4 @@
+
 .page {
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
@@ -34,6 +35,19 @@
     margin-top: 46px;
   }
 }
+
+.heroCTA {
+  background: linear-gradient(to right, #df5daa, #fea62b)!important;
+}
+
+
+.heroCTA:hover {
+  background: linear-gradient(to right, #df5daa, #fea62b)!important;
+  box-shadow: 0 4px 12px #e66e8b!important;
+  transform: translateY(-1px);
+}
+
+
 
 .content {
   margin: 0 auto;

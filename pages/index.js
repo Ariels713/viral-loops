@@ -109,13 +109,15 @@ export default function Home() {
               </div>
 
               <h2 className={styles.headline}>
-              Refer startups to Rho. It could win you $100K.
+                Refer startups to Rho. It could win you $100K.
               </h2>
 
               <p className={styles.subheadline}>
-              Refer a qualified startup to Rho. You get $1,000. They get $1,000. Refer the most before August 15th, you win $100,000. Terms and conditions apply.
+                Refer a qualified startup to Rho. You get $1,000. They get $1,000. Refer the most before August 15th, you win $100,000. Terms and conditions apply.
               </p>
-
+              <button className={`${styles.getUrlButton} ${styles.heroCTA}`} onClick={() => document.getElementById('signup-form').scrollIntoView({ behavior: 'smooth' })}>
+                Get Your Link
+              </button>
               {/* Video Player */}
               {/* <div className={styles.videoContainer}>
                 <div className={styles.videoWrapper}>
