@@ -119,20 +119,19 @@ export default function Home() {
                 Get Your Link
               </button>
               {/* Video Player */}
-              {/* <div className={styles.videoContainer}>
+              <div className={styles.videoContainer}>
                 <div className={styles.videoWrapper}>
-                  <iframe
-                    src="https://player.vimeo.com/video/1092148967?h=b9e5775b90&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
-                    width="640"
-                    height="360"
-                    frameBorder="0"
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                    allowFullScreen
-                    title="The Father of Accounting (Apologizes…500 Years Later) | Rho"
+                  <iframe 
+                    src="https://player.vimeo.com/video/1099793295?h=ffb359c6f5&amp;badge=0&amp;autopause=0&amp;autoplay=0&amp;loop=false&amp;player_id=0&amp;app_id=58479" 
+                    width="640" 
+                    height="360" 
+                    style={{ border: 0 }}
+                    allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                    title="Summer of Rho: How to Participate"
                     className={styles.videoIframe}
                   ></iframe>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
 
