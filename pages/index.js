@@ -119,7 +119,7 @@ export default function Home() {
                 Get Your Link
               </button>
               {/* Video Player */}
-              <div className={styles.videoContainer}>
+              {/* <div className={styles.videoContainer}>
                 <div className={styles.videoWrapper}>
                   <iframe 
                     src="https://player.vimeo.com/video/1099793295?h=ffb359c6f5&amp;badge=0&amp;autopause=0&amp;autoplay=0&amp;loop=false&amp;player_id=0&amp;app_id=58479" 
@@ -131,7 +131,7 @@ export default function Home() {
                     className={styles.videoIframe}
                   ></iframe>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
