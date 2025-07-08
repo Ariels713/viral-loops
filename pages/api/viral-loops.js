@@ -22,7 +22,7 @@ async function sendSlackNotification(userData) {
 				type: "section",
 				text: {
 					type: "mrkdwn",
-					text: `*New Summer of Rho Registration! 🎉*\n\n*Name:* ${userData.firstName} ${userData.lastName || ''}\n*Email:* ${userData.email}\n*Submission Date:* ${submissionDate}`
+					text: `*New Summer of Rho Registration! 🎉*\n\n*Name:* ${userData.firstName} ${userData.lastName || ''}\n*Email:* ${userData.email}\n*Referral Code:* ${userData.referralCode}\n*Submission Date:* ${submissionDate}`
 				}
 			}
 		]
@@ -240,13 +240,7 @@ export default async function handler(req, res) {
 				})
 			}
 
-			// Send Slack notification first (regardless of testing mode)
-			try {
-				await sendSlackNotification({ email, firstName, lastName })
-			} catch (slackError) {
-				console.error('Slack notification failed:', slackError)
-				// Don't fail the registration if Slack fails
-			}
+
 
 			let response, data
 
@@ -254,6 +248,14 @@ export default async function handler(req, res) {
 			if (isTestingMode) {
 				console.log('Testing mode enabled - skipping Viral Loops API call')
 				const mockReferralCode = 'TEST' + Math.random().toString(36).substr(2, 6).toUpperCase()
+				
+				// Send Slack notification with referral code
+				try {
+					await sendSlackNotification({ email, firstName, lastName, referralCode: mockReferralCode })
+				} catch (slackError) {
+					console.error('Slack notification failed:', slackError)
+					// Don't fail the registration if Slack fails
+				}
 				
 				return res.status(200).json({ 
 					success: true, 
@@ -325,6 +327,14 @@ export default async function handler(req, res) {
 			} catch (participantError) {
 				console.log('Could not fetch participant data:', participantError.message)
 			}
+
+			// Send Slack notification with referral code
+			try {
+				await sendSlackNotification({ email, firstName, lastName, referralCode: data.referralCode })
+			} catch (slackError) {
+				console.error('Slack notification failed:', slackError)
+				// Don't fail the registration if Slack fails
+			}
 			
 			res.status(200).json({ 
 				success: true, 
@@ -366,18 +376,20 @@ export default async function handler(req, res) {
 				note: 'Demo data - Configure API integration for live data'
 			})
 		} else {
-			// Send Slack notification for mock registration too
+			const mockReferralCode = 'DEMO' + Math.random().toString(36).substr(2, 6).toUpperCase()
+			
+			// Send Slack notification for mock registration with referral code
 			try {
 				await sendSlackNotification({ 
 					email: req.body.email, 
 					firstName: req.body.firstName, 
-					lastName: req.body.lastName 
+					lastName: req.body.lastName,
+					referralCode: mockReferralCode
 				})
 			} catch (slackError) {
 				console.error('Slack notification failed:', slackError)
 			}
 
-			const mockReferralCode = 'DEMO' + Math.random().toString(36).substr(2, 6).toUpperCase()
 			res.status(200).json({ 
 				success: true, 
 				mock: true,
