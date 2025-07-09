@@ -122,7 +122,7 @@ export default function Home() {
               <div className={styles.videoContainer}>
                 <div className={styles.videoWrapper}>
                   <iframe
-                    src="https://player.vimeo.com/video/1099793295?h=ffb359c6f5&amp;badge=0&amp;autopause=0&amp;autoplay=0&amp;loop=false&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                    src="https://player.vimeo.com/video/1099793295?h=ffb359c6f5&amp;badge=0&amp;autopause=0&amp;autoplay=1&amp;loop=false&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
                     width="640"
                     height="360"
                     style={{ border: 0 }}
