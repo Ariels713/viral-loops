@@ -174,7 +174,7 @@ export default async function handler(req, res) {
 				return bSuccessful - aSuccessful
 			})
 
-			const leaderboard = sortedParticipants.slice(0, 10).map((participant, index) => {
+			const leaderboard = sortedParticipants.slice(0, 3).map((participant, index) => {
 				// Try different name combinations
 				let name = 'Anonymous User'
 				
