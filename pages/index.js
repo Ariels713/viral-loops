@@ -233,7 +233,7 @@ export default function Home() {
           </div>
 
           {/* Leaderboard Section */}
-          <div className={styles.leaderboardSection}>
+          {/* <div className={styles.leaderboardSection}>
             <div className={styles.leaderboardContainer}>
               <div className={styles.leaderboardHeader}>
                 <h2 className={styles.leaderboardTitle}>Summer of Rho Leaderboard</h2>
@@ -245,18 +245,12 @@ export default function Home() {
                 <Leaderboard />
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className={styles.howItWorksSection}>
             <div className={styles.howitworksContent}>
               <div className={styles.steps}>
                 <div className={styles.step}>
-                  <div className={styles.stepContent}>
-                    <h3 className={styles.stepTitle}>Have other questions about Summer of Rho?</h3>
-                    <button className={styles.getUrlButton} onClick={() => window.location.href = 'mailto:summerofrho@rho.co?subject=Summer%20of%20Rho%20competition%'}>
-                      Contact Us
-                    </button>
-                  </div>
                   <div className={styles.stepImage}>
                     <Image
                       src="/images/sign-up.png"
@@ -266,6 +260,13 @@ export default function Home() {
                       className={styles.stepIllustration}
                     />
                   </div>
+                  <div className={styles.stepContent}>
+                    <h3 className={styles.stepTitle}>Have other questions about Summer of Rho?</h3>
+                    <button className={styles.getUrlButton} onClick={() => window.location.href = 'mailto:summerofrho@rho.co?subject=Summer%20of%20Rho%20competition%'}>
+                      Contact Us
+                    </button>
+                  </div>
+
                 </div>
               </div>
             </div>
