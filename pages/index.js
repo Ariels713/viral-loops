@@ -197,7 +197,7 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <div className={styles.divider}></div>
+                
                 {/* Step 3 */}
                 <div className={styles.step}>
                   <div className={styles.stepContent}>
