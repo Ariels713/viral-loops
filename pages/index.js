@@ -231,7 +231,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-
+          <div className={styles.divider}></div>
           {/* Leaderboard Section */}
           {/* <div className={styles.leaderboardSection}>
             <div className={styles.leaderboardContainer}>
