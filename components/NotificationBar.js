@@ -55,6 +55,11 @@ export default function NotificationBar({
 	const getMessage = () => {
 		const { days, hours, minutes, seconds } = timeLeft
 		
+		// Show concluded message when competition has ended
+		if (timeLeft.total <= 0) {
+			return "The Summer of Rho '25 competition has now concluded. Thanks for participating!"
+		}
+		
 		if (days > 0) {
 			return `Summer of Rho '25 ends in ${days} Days, ${minutes} Minutes and ${seconds} Seconds`
 		} else if (hours > 0) {
@@ -62,13 +67,8 @@ export default function NotificationBar({
 		} else if (minutes > 0 || seconds > 0) {
 			return `Summer of Rho '25 ends in ${minutes} Minutes and ${seconds} Seconds`
 		} else {
-			return "Summer of Rho '25 has ended"
+			return "The Summer of Rho '25 competition has now concluded. Thanks for participating!"
 		}
-	}
-
-	// Don't render if contest has ended
-	if (timeLeft.total === 0) {
-		return null
 	}
 
 	return (
