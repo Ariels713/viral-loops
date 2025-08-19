@@ -224,14 +224,14 @@ export default function Home() {
           </div>
 
           {/* Widgets Section */}
-          <div className={styles.widgetsSection} id="signup-form">
+          {/* <div className={styles.widgetsSection} id="signup-form">
             <div className={styles.widgets}>
               <div className={styles.widget}>
                 <ViralLoopsForm />
               </div>
             </div>
-          </div>
-          <div className={styles.divider}></div>
+          </div> */}
+          {/* <div className={styles.divider}></div> */}
           {/* Leaderboard Section */}
           {/* <div className={styles.leaderboardSection}>
             <div className={styles.leaderboardContainer}>
@@ -251,6 +251,13 @@ export default function Home() {
             <div className={styles.howitworksContent}>
               <div className={styles.steps}>
                 <div className={styles.step}>
+
+                  <div className={styles.stepContent}>
+                    <h3 className={styles.stepTitle}>Have other questions about Summer of Rho?</h3>
+                    <button className={styles.getUrlButton} onClick={() => window.location.href = 'mailto:summerofrho@rho.co?subject=Summer%20of%20Rho%20competition%'}>
+                      Contact Us
+                    </button>
+                  </div>
                   <div className={styles.stepImage}>
                     <Image
                       src="/images/sign-up.png"
@@ -260,13 +267,6 @@ export default function Home() {
                       className={styles.stepIllustration}
                     />
                   </div>
-                  <div className={styles.stepContent}>
-                    <h3 className={styles.stepTitle}>Have other questions about Summer of Rho?</h3>
-                    <button className={styles.getUrlButton} onClick={() => window.location.href = 'mailto:summerofrho@rho.co?subject=Summer%20of%20Rho%20competition%'}>
-                      Contact Us
-                    </button>
-                  </div>
-
                 </div>
               </div>
             </div>
